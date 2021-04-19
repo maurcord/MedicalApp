@@ -1,0 +1,40 @@
+
+body {
+    height: 100vh;
+}
+.container {
+    width: 100%;
+}
+
+.header {
+    height: 6em;
+    background-color: #03045e;
+    color: white;
+    text-align: start;
+    justify-content: center;
+    justify-items: center;
+}
+.nav {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    background-color: #0077b6;
+    height: 80px;
+  
+}
+.fas {
+    margin: 10px;
+    color: white;
+}
+.main-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+}
+.sidebar {
+    background-color: lightgray;
+}
