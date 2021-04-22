@@ -11,7 +11,20 @@ $(function () {
     { name: "Jake Doe", doctor: "31", time:"9:00 am", date: "04/21/21", id:"9"},
     { name: "Jordan Doe", doctor: "32", time:"9:00 am", date: "04/21/21", id:"10"},
     { name: "Justin Doe", doctor: "52", time:"9:00 am", date: "04/21/21", id:"11"},
-    { name: "Jill Doe", doctor: "14", time:"9:00 am", date: "04/21/21", id:"12"}]
+    { name: "Jill Doe", doctor: "14", time:"9:00 am", date: "04/21/21", id:"12"},
+    { name: "John Doe", doctor: "10", time:"9:00 am", date: "04/21/21", id:"13"},
+    { name: "Jane Doe", doctor: "22", time:"9:00 am", date: "04/21/21", id:"14"},
+    { name: "Jake Doe", doctor: "31", time:"9:00 am", date: "04/21/21", id:"15"},
+    { name: "Jordan Doe", doctor: "32", time:"9:00 am", date: "04/21/21", id:"16"},
+    { name: "Justin Doe", doctor: "52", time:"9:00 am", date: "04/21/21", id:"17"},
+    { name: "Jill Doe", doctor: "14", time:"9:00 am", date: "04/21/21", id:"18"},
+    { name: "John Doe", doctor: "10", time:"9:00 am", date: "04/21/21", id:"19"},
+    { name: "Jane Doe", doctor: "22", time:"9:00 am", date: "04/21/21", id:"20"},
+    { name: "Jake Doe", doctor: "31", time:"9:00 am", date: "04/21/21", id:"21"},
+    { name: "Jordan Doe", doctor: "32", time:"9:00 am", date: "04/21/21", id:"21"},
+    { name: "Justin Doe", doctor: "52", time:"9:00 am", date: "04/21/21", id:"22"},
+    { name: "Jill Doe", doctor: "14", time:"9:00 am", date: "04/21/21", id:"23"}
+]
 
 
     $("#grid").kendoGrid({
@@ -24,9 +37,9 @@ $(function () {
 
     dataSource: {
         data: people,
-        pageSize: 5
+        pageSize: 10
     },
-    height: 400,
+    height: 600,
     scrollable: true,
     pageable: true,
     sortable: {
