@@ -1,4 +1,6 @@
-
+html {
+    font-size: 14px;
+}
 body {
     height: 100vh;
 }
@@ -41,4 +43,30 @@ body {
 }
 .sidebar {
     background-color: lightgray;
+}
+
+.apt-search {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+   border: 2px solid grey;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
 }

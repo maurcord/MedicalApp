@@ -53,6 +53,43 @@ $(document).ready(function() {
     $("#treeView").kendoTreeView();
 });
 
+$(document).ready(function () {
+    var validationSuccess = $("#validation-success");
+
+    $("#exampleform").kendoForm({
+        orientation: "horizontal",
+        formData: {
+            Id: "John Doe",
+            Patient: Number,
+            Doctor: Number,
+            Time: "Time",
+            Date: new Date(),
+            Agree: false
+        },
+        items: [{
+            type: "group",
+            label: "Appointment Search",
+            items: [
+                {field: "Id", editor: "NumericTextBox", label: "ID:",validation: { required: true } },
+                { field: "Patient", editor: "NumericTextBox", label: "Patient:", validation: { required: true} },
+                { field: "Doctor", editor: "NumericTextBox", label: "Doctor:", validation: { required: true} },
+                { field: "Time", label: "Time:", validation: { required: true} },
+                { field: "Date", editor: "DatePicker", label: "Date:", validation: { required: true} },
+                { field: "Reason", label: "Reason:", validation: { required: true} },
+            ]   
+        }],
+        validateField: function(e) {
+            validationSuccess.html("");
+        },
+        submit: function(e) {
+            e.preventDefault();
+            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+        },
+        clear: function(ev) {
+            validationSuccess.html("");
+        }
+    });
+});
 
 
 
