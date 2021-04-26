@@ -81,7 +81,7 @@ $(document).ready(function () {
         validateField: function(e) {
             validationSuccess.html("");
         },
-        submit: function(e) {
+        search: function(e) {
             e.preventDefault();
             validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
         },
