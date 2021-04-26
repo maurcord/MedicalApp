@@ -49,7 +49,9 @@ $(function () {
     }); 
 });
 
-
+$(document).ready(function() {
+    $("#treeView").kendoTreeView();
+});
 
 
 
