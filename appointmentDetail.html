@@ -21,7 +21,6 @@
     <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
     
 <link rel="stylesheet" href="/css/skeleton.css">
-<link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/mystyle.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
@@ -39,7 +38,9 @@
     </header>
     <nav class="nav">
         <i class="fas fa-clinic-medical"></i>
-        <a href='main.html'>Home</a>
+        <a href='home.html'>Home</a>
+        <i class="fas fa-user-md"></i>
+        <a href='appointments.html'>Appointments</a>
         <i class="fas fa-user-md"></i>
         <a href='patients.html'>Patients</a> 
         <i class="fas fa-notes-medical"></i>
@@ -54,30 +55,38 @@
                 <ul>
                     <li><a href="appointmentSearch.html">Appointment Search</a> </li>
                     <li><a href="appointmentDetail.html">Appointment Detail</a> </li>
-                    
-                     
-                   
                 </ul>
             </li>
           
         </ul> 
         
-        <!-- <script>
-        $(document).ready(function() {
-            $("#treeView").kendoTreeView();
-        });
-        </script> -->
         </div>
         <div id="main">
             <nav class="crumbs">
                 <ul>
-                    <li class="crumb"><a href="main.html">Home</a></li>
+                    <li class="crumb"><a href="home.html">Appointments</a></li>
                     <li class="crumb"><a href="appointmentDetail.html">Appointment Detail</a></li>
                 </ul>
             </nav>
             <div class="apt-search">
-                <div id="validation-success"></div>
-                <form id="exampleform2"></form>
+                <div id="validation-success">
+
+                </div>
+                
+                <div class="form2-style">
+                <form id="exampleform2">
+                <button>New</button><button>Save</button><button>Cancel</button><button>Delete</button>
+                </form>
+                </div>
+
+                <div class="detail-form">
+                <form>
+                    Opened By:<input type="text">
+                    Opened On:<input type="text">
+                    Edited By:<input type="text">
+                    Edited On:<input type="text">
+                </form>
+                </div>
            </div>
        </div>
     </div>

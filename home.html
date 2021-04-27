@@ -21,7 +21,6 @@
     <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
     
 <link rel="stylesheet" href="/css/skeleton.css">
-<link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/mystyle.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
@@ -39,7 +38,9 @@
     </header>
     <nav class="nav">
         <i class="fas fa-clinic-medical"></i>
-        <a href='main.html'>Home</a>
+        <a href='home.html'>Home</a>
+        <i class="fas fa-user-md"></i>
+        <a href='appointments.html'>Appointments</a>
         <i class="fas fa-user-md"></i>
         <a href='patients.html'>Patients</a> 
         <i class="fas fa-notes-medical"></i>
@@ -52,9 +53,8 @@
           <ul id="treeView">
             <li>My Appointments
                 <ul>
-                    <li><a href="appointmentsSearch.html">Appointment Search</a> </li>
-                      
-                        <li>Appointment Detail</li>
+                    <li><a href="appointmentSearch.html">Appointment Search</a> </li>
+                    <li><a href="appointmentDetail.html">Appointment Detail</a> </li>
                      </ul>
                    
                 </ul>
@@ -62,21 +62,12 @@
           
         </ul> 
         
-        <!-- <script>
-        $(document).ready(function() {
-            $("#treeView").kendoTreeView();
-        });
-        </script> -->
+    
         </div>
         <div id="main">
-            <nav class="crumbs">
-                <ul>
-                    <li class="crumb"><a href="main.html">Home</a></li>
-                </ul>
-            </nav
-            ><h3 class="welcome-header">Welcome to CarePoint. A patient management application.</h3>
-           <div class="welcome">    
-            
+          
+            <h3 class="welcome-header">Welcome to CarePoint. A patient management application.</h3>
+           <div class="welcome">     
            </div>
        </div>
     </div>
