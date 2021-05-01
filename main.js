@@ -43,7 +43,7 @@ $(function () {
         data: people,
         pageSize: 10
     },
-    height: 600,
+    height: 500,
     scrollable: true,
     pageable: true,
     sortable: {
@@ -78,6 +78,7 @@ $(document).ready(function () {
             Date: new Date(),
             Agree: false
         },
+        height: 485 ,
         items: [{
             type: "group",
             label: "Filters",
@@ -144,3 +145,45 @@ $(document).ready(function () {
 });
 
 
+/////////////////////////////////////////////// Patient Seach Form //////////////////////////////////////////////////
+
+$(document).ready(function () {
+    var validationSuccess = $("#validation-success");
+
+    $("#exampleform3").kendoForm({
+        orientation: "horizontal",
+        formData: {
+            Id: "",
+            FirstName: "",
+            LastName: "",
+            Birth: new Date(),
+            ActivePatient: "",
+            Doctor: Number,
+            Time: "Time",
+            Date: new Date(),
+            Agree: false
+        }, 
+        items: [{
+            type: "group",
+            label: "Patient Search",
+            items: [
+                {field: "Id", label: "ID:",validation: { required: true } },
+                { field: "FirstName", label: "First Name", validation: { required: true} },
+                { field: "LastName", label: "Last Name", validation: { required: true} },
+                { field: "ActivePatient",label: "Active Patient?", validation: { required: true} },
+                { field: "Time", editor: "TimePicker", label: "Time", validation: { required: true} },
+                { field: "Reason", label: "City", validation: { required: true} },
+            ]   
+        }],
+        validateField: function(e) {
+            validationSuccess.html("");
+        },
+        search: function(e) {
+            e.preventDefault();
+            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+        },
+        clear: function(ev) {
+            validationSuccess.html("");
+        }
+    });
+});

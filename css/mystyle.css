@@ -53,6 +53,7 @@ body {
     justify-content: center;
    border: 2px solid grey;
 }
+
 .detail-form {
     border: 2px black solid;
     font-size: 12px;
@@ -62,7 +63,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
+
 .form2-style {
     display: flex;
     justify-content: center;
