@@ -163,6 +163,8 @@ $(document).ready(function () {
             Date: new Date(),
             Agree: false
         }, 
+        layout:"grid",
+        grid:{ cols:2, gutter: 20 },
         items: [{
             type: "group",
             label: "Patient Search",
@@ -170,10 +172,19 @@ $(document).ready(function () {
                 {field: "Id", label: "ID:",validation: { required: true } },
                 { field: "FirstName", label: "First Name", validation: { required: true} },
                 { field: "LastName", label: "Last Name", validation: { required: true} },
-                { field: "ActivePatient",label: "Active Patient?", validation: { required: true} },
+                { field: "ActivePatient",label: "Active Patient?", validation: { required: true} 
+            }
+        ] 
+    } ,
+    {
+            type: "group",         
+            layout: "grid",
+            grid: { cols:2, gutter: 20 },
+         items: [  
                 { field: "Time", editor: "TimePicker", label: "Time", validation: { required: true} },
-                { field: "Reason", label: "City", validation: { required: true} },
-            ]   
+                { field: "Reason", label: "Reason", validation: { required: true} },
+                { field: "PrimaryInsurance", label: "Primary Insurance", validation: { required: true} },
+                { field: "SecondaryInsurance", label: "Secondary Insurance", validation: { required: true} }]
         }],
         validateField: function(e) {
             validationSuccess.html("");

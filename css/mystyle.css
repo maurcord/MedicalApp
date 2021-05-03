@@ -35,7 +35,7 @@ body {
 }
 .main-container {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 15% 85%;
     height: 100vh;
 }
 
@@ -51,7 +51,9 @@ body {
     align-items: center;
     justify-items: center;
     justify-content: center;
-   border: 2px solid grey;
+     border: 2px solid grey;
+     height: 500px;
+     padding: 20px;
 }
 
 .detail-form {
