@@ -233,6 +233,8 @@ $(document).ready(function () {
                 {field: "Zip", label: "Zip Code *", validation: { required: true } },
                 {field: "PrimaryInsurance", label: "Primary Insurance *", validation: { required: true } },
                 {field: "PrimaryInsuranceNumber", label: "Primary Insurance  ID Number *", validation: { required: true } },
+                {field: "PrimaryInsuranceHolder", label: "Primary Insurance Holder *", validation: { required: true } },
+
              
         ] 
     } ,
@@ -241,10 +243,14 @@ $(document).ready(function () {
             layout: "grid",
             grid: { cols:2, gutter: 20 },
          items: [  
-                { field: "Time", editor: "TimePicker", label: "Time", validation: { required: true} },
-                { field: "Reason", label: "Reason", validation: { required: true} },
-                { field: "PrimaryInsurance", label: "Primary Insurance", validation: { required: true} },
-                { field: "SecondaryInsurance", label: "Secondary Insurance", validation: { required: true} }]
+                { field: "SocialSecurity", label: "Social Security Number", validation: { required: true} },
+                {field: "MiddleName", label: "Middle Name", validation: { required: true } },
+                {field: "Suffix", label: "Suffix", validation: { required: true } },
+                {field: "State", label: "State", validation: { required: true } },
+                { field: "SecondaryInsurance", label: "Secondary Insurance", validation: { required: true} },
+                { field: "SecondaryInsuranceID", label: "Secondary Insurance ID Number", validation: { required: true} },
+                { field: "SecondaryInsuranceHolder", label: "Secondary Insurance Holder", validation: { required: true} }
+            ]
         }],
         validateField: function(e) {
             validationSuccess.html("");
