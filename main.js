@@ -51,7 +51,7 @@ $(function () {
     },
     groupable: true
     }); 
-});
+
 
 
 /////////////////////////////////// NAV TREE /////////////////////////////////////////////////////////////
@@ -197,4 +197,90 @@ $(document).ready(function () {
             validationSuccess.html("");
         }
     });
+});
+
+//////////////////////////////////////////////////////////// PATIENT DETAIL FORM ///////////////////////////////////////////////////////
+
+$(document).ready(function () {
+    var validationSuccess = $("#validation-success");
+
+    $("#exampleform4").kendoForm({
+        orientation: "horizontal",
+        formData: {
+            Id: "",
+            FirstName: "",
+            LastName: "",
+            Birth: new Date(),
+            ActivePatient: "",
+            Doctor: Number,
+            Time: "Time",
+            Date: new Date(),
+            Agree: false
+        }, 
+        layout:"grid",
+        grid:{ cols:2, gutter: 20 },
+        items: [{
+            type: "group",
+            label: "Patient Detail",
+            items: [
+                {field: "ActivePatient", label: "Active Patient?", validation: { required: true } },
+                {field: "Birth", label: "Date of Birth *", validation: { required: true } },
+                { field: "FirstName", label: "First Name *", validation: { required: true} },
+                { field: "LastName", label: "Last Name *", validation: { required: true} }, 
+                {field: "Adress", label: "Street Address *", validation: { required: true } },
+                {field: "Apartment", label: "Apartment *", validation: { required: true } },
+                {field: "City", label: "City *", validation: { required: true } },
+                {field: "Zip", label: "Zip Code *", validation: { required: true } },
+                {field: "PrimaryInsurance", label: "Primary Insurance *", validation: { required: true } },
+                {field: "PrimaryInsuranceNumber", label: "Primary Insurance  ID Number *", validation: { required: true } },
+             
+        ] 
+    } ,
+    {
+            type: "group",         
+            layout: "grid",
+            grid: { cols:2, gutter: 20 },
+         items: [  
+                { field: "Time", editor: "TimePicker", label: "Time", validation: { required: true} },
+                { field: "Reason", label: "Reason", validation: { required: true} },
+                { field: "PrimaryInsurance", label: "Primary Insurance", validation: { required: true} },
+                { field: "SecondaryInsurance", label: "Secondary Insurance", validation: { required: true} }]
+        }],
+        validateField: function(e) {
+            validationSuccess.html("");
+        },
+        search: function(e) {
+            e.preventDefault();
+            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+        },
+        clear: function(ev) {
+            validationSuccess.html("");
+        }
+    });
+});
+
+
+
+///////////////////////////////////// PATIENT DETAIL GRID ///////////////////////////////////////////////
+
+$("#grid2").kendoGrid({
+    columns: [
+    { title: "ID", field: "id" },
+    { title: "Date", field:"date" },
+    { title: "Time", field:"time" },
+    { title: "Patient", field: "name"},
+    { title: "Doctor", field: "doctor" } ],
+
+dataSource: {
+    data: people,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
 });
