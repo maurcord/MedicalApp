@@ -27,11 +27,36 @@ $(function () {
     { name: "Jordan Doe", doctor: "32", time:"8:00 am", date: "04/21/21", id:"21"},
     { name: "Justin Doe", doctor: "52", time:"11:00 am", date: "04/21/21", id:"22"},
     { name: "Jill Doe", doctor: "14", time:"9:00 am", date: "04/21/21", id:"23"}
+
+   
 ]
 
+ var people2 = 
+    [{ id:"1", date:"05/4/2021", weight: "150lbs", height: "5'11", temperature:"97.1", bloodPressure:"145/78", pulse: 68 },
+    { id:"2", date:"05/4/2021", weight: "160lbs", height: "5'10", temperature:"98.1", bloodPressure:"146/78", pulse: 78  },
+    { id:"3", date:"05/4/2021", weight: "170lbs", height: "5'9", temperature:"99.1", bloodPressure:"144/78", pulse: 66  },
+    { id:"4", date:"05/4/2021", weight: "180lbs", height: "5'8", temperature:"98.1", bloodPressure:"143/78", pulse: 64  },
+    { id:"5", date:"05/4/2021", weight: "190lbs", height: "5'7", temperature:"96.1", bloodPressure:"142/78", pulse: 61  }]
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
 
     $("#grid").kendoGrid({
+        toolbar: ["excel"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            toolbar: ["pdf"],
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
         columns: [
         { title: "ID", field: "id" },
         { title: "Date", field:"date" },
@@ -58,7 +83,7 @@ $(function () {
 
 $(document).ready(function() {
     $("#treeView").kendoTreeView();
-});
+});  
 
 
 
@@ -270,15 +295,34 @@ $(document).ready(function () {
 ///////////////////////////////////// PATIENT DETAIL GRID ///////////////////////////////////////////////
 
 $("#grid2").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
     columns: [
     { title: "ID", field: "id" },
     { title: "Date", field:"date" },
-    { title: "Time", field:"time" },
-    { title: "Patient", field: "name"},
-    { title: "Doctor", field: "doctor" } ],
+    { title: "Weight", field:"weight" },
+    { title: "Height", field: "height"},
+    { title: "Temperature", field: "temperature" },
+    { title: "Blood Pressure", field: "bloodPressure" },
+    { title: "Pulse", field: "pulse" }
+     ],
 
 dataSource: {
-    data: people,
+    data: people2,
     pageSize: 10
 },
 height: 500,
