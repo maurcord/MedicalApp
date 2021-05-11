@@ -100,7 +100,17 @@ body {
     padding: 0;
     margin: 0;
 }
-/* 
+
 #grid {
-    width: 400px;
-} */
+   padding: 20px;
+}
+#grid2 {
+    padding: 20px;
+ }
+ #grid3 {
+    padding: 20px;
+ }
+
+.k-button a {
+    width: 20px;
+}

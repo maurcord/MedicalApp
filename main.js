@@ -31,11 +31,11 @@ $(function () {
    
 ]
 var people2 = 
-[{ id:"1", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", weight: "150lbs", height: "5'11", temperature:"97.1", bloodPressure:"145/78", pulse: 68 },
-{ id:"2", date:"05/4/2021", weight: "160lbs", height: "5'10", temperature:"98.1", bloodPressure:"146/78", pulse: 78  },
-{ id:"3", date:"05/4/2021", weight: "170lbs", height: "5'9", temperature:"99.1", bloodPressure:"144/78", pulse: 66  },
-{ id:"4", date:"05/4/2021", weight: "180lbs", height: "5'8", temperature:"98.1", bloodPressure:"143/78", pulse: 64  },
-{ id:"5", date:"05/4/2021", weight: "190lbs", height: "5'7", temperature:"96.1", bloodPressure:"142/78", pulse: 61  }]
+[{ id:"1", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"2",  firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None"  },
+{ id:"3", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"4", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"5", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" }]
  
 var people3 = 
     [{ id:"1", date:"05/4/2021", weight: "150lbs", height: "5'11", temperature:"97.1", bloodPressure:"145/78", pulse: 68 },
@@ -63,6 +63,7 @@ var people3 =
                 scale: 0.8
             },
         columns: [
+        { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
         { title: "ID", field: "id" },
         { title: "Date", field:"date" },
         { title: "Time", field:"time" },
@@ -101,14 +102,14 @@ $(document).ready(function () {
     $("#exampleform").kendoForm({
         orientation: "horizontal",
         formData: {
-            Id: "John Doe",
+            Id: "",
             Patient: Number,
             Doctor: Number,
             Time: "Time",
             Date: new Date(),
             Agree: false
         },
-        height: 485 ,
+        height: 500 ,
         items: [{
             type: "group",
             label: "Filters",
@@ -313,6 +314,7 @@ $("#grid2").kendoGrid({
                 scale: 0.8
             },
     columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},    
     { title: "ID", field: "id" },
     { title: "First Name", field:"firstName" },
     { title: "Last Name", field:"lastName" },
@@ -357,6 +359,7 @@ $("#grid3").kendoGrid({
                 scale: 0.8
             },
     columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>"},
     { title: "ID", field: "id" },
     { title: "Date", field:"date" },
     { title: "Weight", field:"weight" },
@@ -367,7 +370,7 @@ $("#grid3").kendoGrid({
      ],
 
 dataSource: {
-    data: people2,
+    data: people3,
     pageSize: 10
 },
 height: 500,
