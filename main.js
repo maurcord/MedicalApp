@@ -444,12 +444,15 @@ $("#grid5").kendoGrid({
     columns: [
     {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>"},
     { title: "ID", field: "id" },
-    { title: "Date", field:"date" },
-    { title: "Weight", field:"weight" },
-    { title: "Height", field: "height"},
-    { title: "Temperature", field: "temperature" },
-    { title: "Blood Pressure", field: "bloodPressure" },
-    { title: "Pulse", field: "pulse" }
+    { title: "Referral Date", field:"referralDate" },
+    { title: "Doctor", field:"doctor" },
+    { title: "Referral Doctor", field: "referralDoctor"},
+    { title: "Procedure", field: "procedure" },
+    { title: "Location", field: "location" },
+    { title: "Opened By", field: "openedBy" },
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
      ],
 
 dataSource: {
