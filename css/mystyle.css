@@ -110,7 +110,28 @@ body {
  #grid3 {
     padding: 20px;
  }
+#grid4 {
+    padding: 20px;
+}
+#grid5 {
+    padding:20px;
+}
+#tabstrip h2 {
+    font-weight: lighter;
+    font-size: 5em;
+    line-height: 1;
+    padding: 0 0 0 30px;
+    margin: 0;
+}
 
-.k-button a {
-    width: 20px;
+#tabstrip h2 span {
+    background: none;
+    padding-left: 5px;
+    font-size: .3em;
+    vertical-align: top;
+}
+
+#tabstrip p {
+    margin: 0;
+    padding: 0;
 }

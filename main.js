@@ -381,4 +381,96 @@ sortable: {
 },
 groupable: true
 }); 
+
+
+$("#grid4").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>"},
+    { title: "ID", field: "id" },
+    { title: "Date", field:"date" },
+    { title: "Treatment", field:"treatment" },
+    { title: "Opened By", field: "openedBy"},
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
+     ],
+
+dataSource: {
+    data: people3,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
+
+$("#grid5").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>"},
+    { title: "ID", field: "id" },
+    { title: "Date", field:"date" },
+    { title: "Weight", field:"weight" },
+    { title: "Height", field: "height"},
+    { title: "Temperature", field: "temperature" },
+    { title: "Blood Pressure", field: "bloodPressure" },
+    { title: "Pulse", field: "pulse" }
+     ],
+
+dataSource: {
+    data: people3,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
+}); 
+$(document).ready(function() {
+    $("#tabstrip").kendoTabStrip({
+        animation:  {
+            open: {
+                effects: "fadeIn"
+            }
+        }
+    });
 });
