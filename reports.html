@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Carepoint Mock App</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/mystyle.css">
-  <script src="https://kit.fontawesome.com/894dc2f90d.js" crossorigin="anonymous"></script>
-  <base href="https://demos.telerik.com/kendo-ui/grid/index">
-    <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
-    <title></title>
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" />
-
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <head>
+        <title>Carepoint Mock App</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+        <script src="./main.js"></script>
+      <!-- CSS
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      
+      <script src="https://kit.fontawesome.com/894dc2f90d.js" crossorigin="anonymous"></script>
+      <!-- <base href="https://demos.telerik.com/kendo-ui/grid/index"> -->
+       
+        <title></title>
+       
     
-    
-    <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
-    
-
-<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
-<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
-<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
-<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
-
-<script src="https://kendo.cdn.telerik.com/2021.1.330/js/angular.min.js"></script>
-
-</head>
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        
+        
+        <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
+        
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2021.1.330/js/angular.min.js"></script>
+     
+    </head>
 <body>
     <script src="https://kendo.cdn.telerik.com/2021.1.330/js/jszip.min.js"></script>
     <header class="header">
@@ -39,311 +39,37 @@
     </header>
     <nav class="nav">
         <i class="fas fa-clinic-medical"></i>
-        <a href>Home</a>
+        <a href='index.html'>Home</a>
         <i class="fas fa-user-md"></i>
-        <a href>Patients</a> 
+        <a href='appointments.html'>Appointments</a>
+        <i class="fas fa-user-md"></i>
+        <a href='patients.html'>Patients</a> 
         <i class="fas fa-notes-medical"></i>
-        <a href>Reports</a>
+        <a href="reports.html">Reports</a>
         <i class="fas fa-hospital"></i>
-        <a href>Administration</a>
+        <a href="administration.html">Administration</a>
     </nav>
     <div class="main-container">
         <div class="sidebar">
-            <a href="www.google.com/images">My Appointments</a>
+            <ul id="treeView">
+                <li>Reports
+                    <ul>
+                        
+                        <li><a href="patientDetail.html">Patient Deatil</a> </li> 
+                           
+                    
+                       
+                    </ul>
+                </li>
+              
+            </ul> 
         </div>
        <div id="main">
-        <div id="example">
-            <div id="grid"></div>
-            <!-- <script>
-                $(document).ready(function () {
-                    var crudServiceBaseUrl = "https://demos.telerik.com/kendo-ui/service",
-                        dataSource = new kendo.data.DataSource({
-                            transport: {
-                                read: {
-                                    url: crudServiceBaseUrl + "/detailproducts",
-                                    dataType: "jsonp"
-                                },
-                                update: {
-                                    url: crudServiceBaseUrl + "/detailproducts/Update",
-                                    dataType: "jsonp"
-                                },
-                                destroy: {
-                                    url: crudServiceBaseUrl + "/detailproducts/Destroy",
-                                    dataType: "jsonp"
-                                },
-                                parameterMap: function (options, operation) {
-                                    if (operation !== "read" && options.models) {
-                                        return { models: kendo.stringify(options.models) };
-                                    }
-                                }
-                            },
-                            batch: true,
-                            pageSize: 20,
-                            autoSync: true,
-                            aggregate: [{
-                                field: "TotalSales",
-                                aggregate: "sum"
-                            }],
-                            group: {
-                                field: "Category.CategoryName",
-                                dir: "desc",
-                                aggregates: [
-                                    { field: "TotalSales", aggregate: "sum" }
-                                ]
-                            },
-                            schema: {
-                                model: {
-                                    id: "ProductID",
-                                    fields: {
-                                        ProductID: { editable: false, nullable: true },
-                                        Discontinued: { type: "boolean", editable: false },
-                                        TotalSales: { type: "number", editable: false },
-                                        TargetSales: { type: "number", editable: false },
-                                        LastSupply: { type: "date" },
-                                        UnitPrice: { type: "number" },
-                                        UnitsInStock: { type: "number" }
-                                    }
-                                }
-                            }
-                        });
-        
-                    $("#grid").kendoGrid({
-                        dataSource: dataSource,
-                        columnMenu: {
-                            filterable: false
-                        },
-                        height: 680,
-                        editable: "incell",
-                        pageable: true,
-                        sortable: true,
-                        navigatable: true,
-                        resizable: true,
-                        reorderable: true,
-                        groupable: true,
-                        filterable: true,
-                        dataBound: onDataBound,
-                        toolbar: ["excel", "pdf", "search"],
-                        columns: [{
-                            selectable: true,
-                            width: 75,
-                            attributes: {
-                                "class": "checkbox-align",
-                            },
-                            headerAttributes: {
-                                "class": "checkbox-align",
-                            }
-                        }, {
-                            field: "id",
-                            title: "ID",
-                            template: "<div class='product-photo' style='background-image: url(../content/web/foods/#:data.ProductID#.jpg);'></div><div class='product-name'>#: ProductName #</div>",
-                            width: 300
-                        }, {
-                            field: "date",
-                            title: "Date",
-                            format: "{0:c}",
-                            width: 105
-                        }, {
-                            field: "patient",
-                            title: "Patient",
-                            template: "<span id='badge_#=ProductID#' class='badgeTemplate'></span>",
-                            width: 130,
-                        }, 
-                        { command: "destroy", title: "&nbsp;", width: 120 }],
-                    });
-                });
-        
-                function onDataBound(e) {
-                    var grid = this;
-                    grid.table.find("tr").each(function () {
-                        var dataItem = grid.dataItem(this);
-                        var themeColor = dataItem.Discontinued ? 'success' : 'error';
-                        var text = dataItem.Discontinued ? 'available' : 'not available';
-        
-                        $(this).find(".badgeTemplate").kendoBadge({
-                            themeColor: themeColor,
-                            text: text,
-                        });
-        
-                     
-        
-                        $(this).find(".sparkline-chart").kendoSparkline({
-                            legend: {
-                                visible: false
-                            },
-                            data: [dataItem.TargetSales],
-                            type: "bar",
-                            chartArea: {
-                                margin: 0,
-                                width: 180,
-                                background: "transparent"
-                            },
-                            seriesDefaults: {
-                                labels: {
-                                    visible: true,
-                                    format: '{0}%',
-                                    background: 'none'
-                                }
-                            },
-                            categoryAxis: {
-                                majorGridLines: {
-                                    visible: false
-                                },
-                                majorTicks: {
-                                    visible: false
-                                }
-                            },
-                            valueAxis: {
-                                type: "numeric",
-                                min: 0,
-                                max: 130,
-                                visible: false,
-                                labels: {
-                                    visible: false
-                                },
-                                minorTicks: { visible: false },
-                                majorGridLines: { visible: false }
-                            },
-                            tooltip: {
-                                visible: false
-                            }
-                        });
-        
-                        kendo.bind($(this), dataItem);
-                    });
-                }
-        
-                function returnFalse() {
-                    return false;
-                }
-        
-                function clientCategoryEditor(container, options) {
-                    $('<input required name="Category">')
-                        .appendTo(container)
-                        .kendoDropDownList({
-                            autoBind: false,
-                            dataTextField: "CategoryName",
-                            dataValueField: "CategoryID",
-                            dataSource: {
-                                data: categories
-                            }
-                        });
-                }
-        
-               
-                
-        
-                var categories = [{
-                    "CategoryID": 1,
-                    "CategoryName": "Beverages"
-                }, {
-                    "CategoryID": 2,
-                    "CategoryName": "Condiments"
-                }, {
-                    "CategoryID": 3,
-                    "CategoryName": "Confections"
-                }, {
-                    "CategoryID": 4,
-                    "CategoryName": "Dairy Products"
-                }, {
-                    "CategoryID": 5,
-                    "CategoryName": "Grains/Cereals"
-                }, {
-                    "CategoryID": 6,
-                    "CategoryName": "Meat/Poultry"
-                }, {
-                    "CategoryID": 7,
-                    "CategoryName": "Produce"
-                }, {
-                    "CategoryID": 8,
-                    "CategoryName": "Seafood"
-                }];
-            </script>
-        
-            <style type="text/css">
-                .customer-photo {
-                    display: inline-block;
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50%;
-                    background-size: 32px 35px;
-                    background-position: center center;
-                    vertical-align: middle;
-                    line-height: 32px;
-                    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-                    margin-left: 5px;
-                }
-        
-                .customer-name {
-                    display: inline-block;
-                    vertical-align: middle;
-                    line-height: 32px;
-                    padding-left: 3px;
-                }
-        
-                .k-grid tr .checkbox-align {
-                    text-align: center;
-                    vertical-align: middle;
-                }
-        
-                .product-photo {
-                    display: inline-block;
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50%;
-                    background-size: 32px 35px;
-                    background-position: center center;
-                    vertical-align: middle;
-                    line-height: 32px;
-                    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-                    margin-right: 5px;
-                }
-        
-                .product-name {
-                    display: inline-block;
-                    vertical-align: middle;
-                    line-height: 32px;
-                    padding-left: 3px;
-                }
-        
-                .k-rating-container .k-rating-item {
-                    padding: 4px 0;
-                }
-        
-                .k-rating-container .k-rating-item .k-icon {
-                    font-size: 16px;
-                }
-        
-                .dropdown-country-wrap {
-                    display: flex;
-                    flex-wrap: nowrap;
-                    align-items: center;
-                    white-space: nowrap;
-                }
-        
-                .dropdown-country-wrap img {
-                    margin-right: 10px;
-                }
-        
-                #grid .k-grid-edit-row > td > .k-rating {
-                    margin-left: 0;
-                    width: 100%;
-                }
-        
-                .k-grid .k-grid-search {
-                    margin-left: auto;
-                    margin-right: 0;
-                }
-            </style>
+            <h1>This page is currently under maintenance.</h1>
         </div>
-       </div> 
+       </div>
     </div>
-   
     
-    <script>
- 
-    
-    
-    </script> -->
 
 </body>
 </html>
