@@ -336,6 +336,40 @@ $(document).ready(function () {
             validationSuccess.html("");
         }
     });
+    $("#exampleform6").kendoForm({
+        orientation: "horizontal",
+        formData: {
+            Id: "",
+            Patient: Number,
+            Doctor: Number,
+            Time: "Time",
+            Date: new Date(),
+            Agree: false
+        },
+        height: 500 ,
+        items: [{
+            type: "group",
+            label: "Filters",
+            items: [
+                {field: "Id", editor: "NumericTextBox", label: "ID:",validation: { required: true } },
+                { field: "Patient", editor: "NumericTextBox", label: "Patient:", validation: { required: true} },
+                { field: "Doctor", editor: "NumericTextBox", label: "Doctor:", validation: { required: true} },
+                { field: "Time", label: "Time:", validation: { required: true} },
+                { field: "Date", editor: "DatePicker", label: "Date:", validation: { required: true} },
+                { field: "Reason", label: "Reason:", validation: { required: true} },
+            ]   
+        }],
+        validateField: function(e) {
+            validationSuccess.html("");
+        },
+        search: function(e) {
+            e.preventDefault();
+            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+        },
+        clear: function(ev) {
+            validationSuccess.html("");
+        }
+    });
 });
 ////////////////////////////////////// Patient Search Grid //////////////////////////////////////
 $("#grid2").kendoGrid({
