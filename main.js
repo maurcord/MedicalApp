@@ -43,6 +43,18 @@ var people3 =
     { id:"3", date:"05/4/2021", weight: "170lbs", height: "5'9", temperature:"99.1", bloodPressure:"144/78", pulse: 66  },
     { id:"4", date:"05/4/2021", weight: "180lbs", height: "5'8", temperature:"98.1", bloodPressure:"143/78", pulse: 64  },
     { id:"5", date:"05/4/2021", weight: "190lbs", height: "5'7", temperature:"96.1", bloodPressure:"142/78", pulse: 61  }]
+
+ var people4 = 
+[{id: 1, doctorName:"Dr. Who"},
+{id: 2, doctorName:"Dr. John"},
+{id: 3, doctorName:"Dr. Jane"},
+{id: 4, doctorName:"Dr.Who"},
+{id: 5, doctorName:"Dr.Who"},
+{id: 6, doctorName:"Dr.Who"},
+{id: 7, doctorName:"Dr.Who"},
+{id: 8, doctorName:"Dr.Who"},
+{id: 9, doctorName:"Dr.Who"},
+{id: 10, doctorName:"Dr.Who"}]   
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
 
     $("#grid").kendoGrid({
@@ -294,6 +306,36 @@ $(document).ready(function () {
             validationSuccess.html("");
         }
     });
+
+    $("#exampleform5").kendoForm({
+        orientation: "horizontal",
+        formData: {
+            Id: "",
+            Patient: Number,
+            Doctor: Number,
+            Time: "Time",
+            Date: new Date(),
+            Agree: false
+        },
+        items: [{
+            type: "group",
+            label: "Filters",
+            items: [
+                {field: "Id", editor: "NumericTextBox", label: "ID:",validation: { required: true } },
+                { field: "Doctor", editor: "NumericTextBox", label: "Doctor:", validation: { required: true} }   
+            ]   
+        }],
+        validateField: function(e) {
+            validationSuccess.html("");
+        },
+        search: function(e) {
+            e.preventDefault();
+            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+        },
+        clear: function(ev) {
+            validationSuccess.html("");
+        }
+    });
 });
 ////////////////////////////////////// Patient Search Grid //////////////////////////////////////
 $("#grid2").kendoGrid({
@@ -472,8 +514,8 @@ sortable: {
 groupable: true
 }); 
 
-
-$("#grid5").kendoGrid({
+/////////////////// DOCTOR SEARCH GRID ///////////////////////////////
+$("#grid6").kendoGrid({
     toolbar: ["excel","pdf"],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
@@ -490,22 +532,15 @@ $("#grid5").kendoGrid({
                 template: $("#page-template").html(),
                 scale: 0.8
             },
+        
     columns: [
     {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>"},
     { title: "ID", field: "id" },
-    { title: "Referral Date", field:"referralDate" },
-    { title: "Doctor", field:"doctor" },
-    { title: "Referral Doctor", field: "referralDoctor"},
-    { title: "Procedure", field: "procedure" },
-    { title: "Location", field: "location" },
-    { title: "Opened By", field: "openedBy" },
-    { title: "Opened On", field: "openedOn" },
-    { title: "Edited By", field: "editedBy" },
-    { title: "Edited On", field: "editedOn" }
+    { title: "Doctor Name", field:"doctorName"}
      ],
 
 dataSource: {
-    data: people3,
+    data: people4,
     pageSize: 10
 },
 height: 500,
@@ -516,7 +551,7 @@ sortable: {
 },
 groupable: true
 }); 
-});
+
 
 
 
@@ -529,4 +564,4 @@ $(document).ready(function() {
             }
         }
     });
-});
+});});
