@@ -341,6 +341,8 @@ groupable: true
 
 ///////////////////////////////////// PATIENT DETAIL GRID ///////////////////////////////////////////////
 
+
+///////////////////////// PATIENT VITALS GRID //////////////////////////
 $("#grid3").kendoGrid({
     toolbar: ["excel","pdf"],
             excel: {
@@ -382,7 +384,7 @@ sortable: {
 groupable: true
 }); 
 
-
+////////////////////////////  PATIENT TREATMENTS TAB //////////////////////////
 $("#grid4").kendoGrid({
     toolbar: ["excel","pdf"],
             excel: {
@@ -423,6 +425,8 @@ sortable: {
 },
 groupable: true
 }); 
+
+////////////////////////////////// PATIENT REFERRALS TAB //////////////////////////////
 
 $("#grid5").kendoGrid({
     toolbar: ["excel","pdf"],
@@ -467,7 +471,56 @@ sortable: {
 },
 groupable: true
 }); 
+
+
+$("#grid5").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>"},
+    { title: "ID", field: "id" },
+    { title: "Referral Date", field:"referralDate" },
+    { title: "Doctor", field:"doctor" },
+    { title: "Referral Doctor", field: "referralDoctor"},
+    { title: "Procedure", field: "procedure" },
+    { title: "Location", field: "location" },
+    { title: "Opened By", field: "openedBy" },
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
+     ],
+
+dataSource: {
+    data: people3,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
 }); 
+});
+
+
+
+
 $(document).ready(function() {
     $("#tabstrip").kendoTabStrip({
         animation:  {
