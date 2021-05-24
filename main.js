@@ -55,6 +55,31 @@ var people3 =
 {id: 8, doctorName:"Dr.Who"},
 {id: 9, doctorName:"Dr.Who"},
 {id: 10, doctorName:"Dr.Who"}]   
+
+var specialty =
+[{id: 1, specialty:"Audiology"},
+{id: 2, specialty:"Ear, Nose, Throat"},
+{id: 3, specialty:"Cardiology"},
+{id: 4, specialty:"Neurology"},
+{id: 5, specialty:"Internal Medicine"},
+{id: 6, specialty:"Orthopedic Surgeon"},
+{id: 7, specialty:"Pediatrics"},
+{id: 8, specialty:"Cardiology"},
+{id: 9, specialty:"Neurology"},
+{id: 10, specialty:"Audiology"}]   
+
+var medication =
+[{id: 1, medicationName:"Crestor", type: "Cholesterol"},
+{id: 2, medicationName:"Liptor", type: "Cholesterol" },
+{id: 3, medicationName:"Zocor", type: "Cholesterol"},
+{id: 4, medicationName:"Amoxicillin", type: "Antibiotic" },
+{id: 5, medicationName:"Tetracycline", type: "Antibiotic" },
+{id: 6, medicationName:"Prozac", type: "Antidepressant"},
+{id: 7, medicationName:"Lexapro", type: "Antidepressant" },
+{id: 8, medicationName:"Paxil", type: "Antidepressant" },
+{id: 9, medicationName:"Vicodin", type: "Pain" },
+{id: 10, medicationName:"Percocet", type: "Pain" }] 
+
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
 
     $("#grid").kendoGrid({
@@ -307,6 +332,9 @@ $(document).ready(function () {
         }
     });
 
+
+//////////////////////////////////  ADMINISTRATION FORM ///////////////////////////////////////////////////////
+
     $("#exampleform5").kendoForm({
         orientation: "horizontal",
         formData: {
@@ -337,6 +365,36 @@ $(document).ready(function () {
         }
     });
     
+    $("#exampleform6").kendoForm({
+        orientation: "horizontal",
+        formData: {
+            Id: "",
+            doctorName: ""
+        },
+        items: [{
+            type: "group",
+            label: "Filters",
+            items: [
+                {field: "Id", editor: "NumericTextBox", label: "ID:",validation: { required: true } },
+                { field: "doctorName", label: "Doctor Name:", validation: { required: true} },
+                { field: "openedBy", label: "Opened By", validation: {required: true} },
+                { field: "openedOn", editor: "DatePicker", label: "Opened On", validation: {required: true} },
+                { field: "edtiedBy", label: "Edited By", validation: {required: true} },
+                { field: "editedOn", editor: "DatePicker", label: "Edited On", validation: {required: true} },
+
+            ]   
+        }],
+        validateField: function(e) {
+            validationSuccess.html("");
+        },
+        search: function(e) {
+            e.preventDefault();
+            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+        },
+        clear: function(ev) {
+            validationSuccess.html("");
+        }
+    });
 });
 ////////////////////////////////////// Patient Search Grid //////////////////////////////////////
 $("#grid2").kendoGrid({
@@ -553,9 +611,176 @@ sortable: {
 groupable: true
 }); 
 
+$("#grid7").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+        
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
+    { title: "ID", field: "id" },
+    { title: "Patient", field: "patient" },
+    { title: "Doctor", field:"doctorName"},
+    { title: "Opened By", field: "openedBy" },
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
+     ],
 
+dataSource: {
+    data: people4,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
 
+$("#grid8").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+        
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
+    { title: "ID", field: "id" },
+    { title: "Doctor", field:"doctorName"},
+    { title: "Specialty", field:"specialty"},
+    { title: "Opened By", field: "openedBy" },
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
+     ],
 
+dataSource: {
+    data: people4,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
+
+$("#grid9").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+        
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
+    { title: "ID", field: "id" },
+    { title: "Specialty", field:"specialty"},
+    { title: "Opened By", field: "openedBy" },
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
+     ],
+
+dataSource: {
+    data: specialty,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
+
+$("#grid10").kendoGrid({
+    toolbar: ["excel","pdf"],
+            excel: {
+                fileName: "Kendo UI Grid Export.xlsx",
+                proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                filterable: true
+            },
+            pdf: {
+                allPages: true,
+                avoidLinks: true,
+                paperSize: "A4",
+                margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+                landscape: true,
+                repeatHeaders: true,
+                template: $("#page-template").html(),
+                scale: 0.8
+            },
+        
+    columns: [
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
+    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
+    { title: "ID", field: "id" },
+    { title: "Medication Name", field:"medicationName"},
+    { title: "Type", field: "type" },
+    { title: "Opened By", field: "openedBy" },
+    { title: "Opened On", field: "openedOn" },
+    { title: "Edited By", field: "editedBy" },
+    { title: "Edited On", field: "editedOn" }
+     ],
+
+dataSource: {
+    data: medication,
+    pageSize: 10
+},
+height: 500,
+scrollable: true,
+pageable: true,
+sortable: {
+    mode: "multiple"
+},
+groupable: true
+}); 
 
 $(document).ready(function() {
     $("#tabstrip").kendoTabStrip({
