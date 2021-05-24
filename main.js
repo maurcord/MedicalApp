@@ -399,6 +399,7 @@ $(document).ready(function () {
 ////////////////////////////////////// Patient Search Grid //////////////////////////////////////
 $("#grid2").kendoGrid({
     toolbar: ["excel","pdf"],
+    
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -698,7 +699,12 @@ groupable: true
 }); 
 
 $("#grid9").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["New","excel","pdf"],
+
+             New: {
+                  filterable: true
+            },
+
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -740,7 +746,11 @@ groupable: true
 }); 
 
 $("#grid10").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["New","excel","pdf"],
+            New: {
+                filterable: true
+            },
+
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
