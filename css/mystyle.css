@@ -1,6 +1,7 @@
 
 body {
     height: 100vh;
+    font-family: 'Aleo', serif;
 }
 .container {
     width: 100%;
@@ -26,6 +27,41 @@ body {
     align-items: center;
   
 }
+.nav1 {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+} 
+#login {
+    margin-left: 800px;
+}
+.medical {
+    background-image: url("/MedicalLogo.png");
+    height: 25%;
+    width: 25%;
+    background-repeat: no-repeat;
+}
+.welcome-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.welcome-buttons1 {
+    padding: 8px;
+    margin: 8px;
+    color: white;
+    background-color: #0077b6;
+    border-radius: 10px;
+    border: none;
+}
+.welcome-buttons2 {
+    padding: 8px;
+    margin: 8px;
+    color: white;
+    background-color: #0077b6;
+    border-radius: 10px;
+    border: none;
+}
 
 .fas {
     margin: 10px;
@@ -37,8 +73,11 @@ body {
     height: 100vh;
 }
 
-.main {
+#main1 {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .sidebar {
     background-color: lightgray;
@@ -92,9 +131,12 @@ body {
 
 .welcome {
     background-image: url("../images/doctors-office-safe.jpg");
-    height: 75%;
-    width: 75%;
+    background-position: center;
+    height: 40%;
+    width: 40%;
+    background-size: contain;
     background-repeat: no-repeat;
+    
 }
 .welcome-header {
     padding: 0;
