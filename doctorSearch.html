@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Medical</title>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"></script>
-        <script src="./main.js"></script>
-      <!-- CSS
-      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-      
-      <script src="https://kit.fontawesome.com/894dc2f90d.js" crossorigin="anonymous"></script>
-      <!-- <base href="https://demos.telerik.com/kendo-ui/grid/index"> -->
-       
-       
-        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-        <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
-        
-    <!-- <link rel="stylesheet" href="/css/skeleton.css"> -->
-    <link rel="stylesheet" href="css/mystyle.css">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" />
-     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kendo.cdn.telerik.com/2021.1.330/js/angular.min.js"></script>
+         <title>Medical</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+  <script src="https://kit.fontawesome.com/894dc2f90d.js" crossorigin="anonymous"></script>
+  <!-- <base href="https://demos.telerik.com/kendo-ui/grid/index"> -->
+   
+   
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
+    
+<!-- <link rel="stylesheet" href="/css/skeleton.css"> -->
+<link rel="stylesheet" href="css/mystyle.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+ <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" /> -->
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap" rel="stylesheet">
+<script src="https://kendo.cdn.telerik.com/2021.1.330/js/angular.min.js"></script>
     </head>
 <body>
     <script src="https://kendo.cdn.telerik.com/2021.1.330/js/jszip.min.js"></script>
@@ -35,25 +35,26 @@
     </header>
     <nav class="nav">
         <i class="fas fa-clinic-medical"></i>
-        <a href='index.html'>Home</a>
+        <a class="nav1" href='index.html'>Home</a>
         <i class="fas fa-user-md"></i>
-        <a href='appointments.html'>Appointments</a>
+        <a class="nav1" href='appointments.html'>Appointments</a>
         <i class="fas fa-user-md"></i>
-        <a href='patients.html'>Patients</a> 
+        <a class="nav1" href='patients.html'>Patients</a> 
         <i class="fas fa-notes-medical"></i>
-        <a href="reports.html">Reports</a>
+        <a class="nav1" href="reports.html">Reports</a>
         <i class="fas fa-hospital"></i>
-        <a href="administration.html">Administration</a>
-    </nav>    <div class="main-container">
+        <a class="nav1" href="administration.html">Administration</a>
+
+        <a id="login" class="nav1" href="Log in">Log In</a>
+    </nav>
+      <div class="main-container">
         <div class="sidebar">
             <ul id="treeView">
                 <li>Administration
                     <ul>
                         
                         <li><a href="doctorSearch.html">Doctor Search</a> </li> 
-                            <ul>
-                                <a href="doctorDetail.html">Doctor Detail</a> 
-                            </ul>
+                        <li><a href="doctorDetail.html">Doctor Detail</a></li>
                         <li><a href="addSpecialties.html">Add Specialties</a> </li> 
                         <li><a href="administration.html">Add Medication</a> </li>     
                     </ul>

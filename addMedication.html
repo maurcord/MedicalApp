@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
 <link rel="stylesheet" href="/css/normalize.css">
- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" />
+ <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" /> -->
  <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap" rel="stylesheet">
 <script src="https://kendo.cdn.telerik.com/2021.1.330/js/angular.min.js"></script>
@@ -31,20 +31,23 @@
 <body>
     <script src="https://kendo.cdn.telerik.com/2021.1.330/js/jszip.min.js"></script>
     <header class="header">
-        <h2>Welcome to CarePoint</h2>
+        <h1>Welcome to Medical</h1>
     </header>
     <nav class="nav">
         <i class="fas fa-clinic-medical"></i>
-        <a href='index.html'>Home</a>
+        <a class="nav1" href='index.html'>Home</a>
         <i class="fas fa-user-md"></i>
-        <a href='appointments.html'>Appointments</a>
+        <a class="nav1" href='appointments.html'>Appointments</a>
         <i class="fas fa-user-md"></i>
-        <a href='patients.html'>Patients</a> 
+        <a class="nav1" href='patients.html'>Patients</a> 
         <i class="fas fa-notes-medical"></i>
-        <a href="reports.html">Reports</a>
+        <a class="nav1" href="reports.html">Reports</a>
         <i class="fas fa-hospital"></i>
-        <a href="administration.html">Administration</a>
-    </nav>    <div class="main-container">
+        <a class="nav1" href="administration.html">Administration</a>
+
+        <a id="login" class="nav1" href="Log in">Log In</a>
+    </nav>
+      <div class="main-container">
         <div class="sidebar">
             <ul id="treeView">
                 <li>Administration

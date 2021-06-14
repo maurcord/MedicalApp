@@ -30,7 +30,7 @@ body {
 .nav1 {
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
+   
 } 
 #login {
     margin-left: 800px;
@@ -40,6 +40,11 @@ body {
     height: 25%;
     width: 25%;
     background-repeat: no-repeat;
+    margin-left: 110px;
+}
+.welcome-intro {
+    width: 75%;
+    text-align: center;
 }
 .welcome-buttons{
     display: flex;
@@ -47,20 +52,22 @@ body {
     justify-content: space-evenly;
 }
 .welcome-buttons1 {
-    padding: 8px;
-    margin: 8px;
+    padding: 5px;
+    margin: 15px;
     color: white;
     background-color: #0077b6;
     border-radius: 10px;
     border: none;
+    width: 100px;
 }
 .welcome-buttons2 {
-    padding: 8px;
-    margin: 8px;
+    padding: 5px;
+    margin: 15px;
     color: white;
     background-color: #0077b6;
     border-radius: 10px;
     border: none;
+    width: 100px;
 }
 
 .fas {
@@ -141,6 +148,13 @@ body {
 .welcome-header {
     padding: 0;
     margin: 0;
+}
+.reports {
+    text-align: center;
+}
+.administration {
+    text-align: center;
+ 
 }
 
 #grid {
