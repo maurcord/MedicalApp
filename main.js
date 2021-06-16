@@ -1,7 +1,7 @@
-
-
-
-
+$(document).ready(function(){
+    $("#main1").css("display", "none");
+    $("#main1").fadeIn(5000);
+});
 
 
 

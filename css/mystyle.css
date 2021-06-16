@@ -37,19 +37,26 @@ body {
 }
 .medical {
     background-image: url("/MedicalLogo.png");
-    height: 25%;
-    width: 25%;
-    background-repeat: no-repeat;
-    margin-left: 110px;
+    height: 200px;
+    width: 200px;
+    grid-area: left;
+    margin: 0 auto;
 }
 .welcome-intro {
-    width: 75%;
+    text-align: center;
+    grid-area: left;
+}
+.welcome-header {
+    padding: 0;
+    margin: 0;
+    grid-area:left;
     text-align: center;
 }
 .welcome-buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    grid-area: left;
 }
 .welcome-buttons1 {
     padding: 5px;
@@ -81,10 +88,27 @@ body {
 }
 
 #main1 {
-    width: 100%;
+  
+    /* display: flex;
+    flex-direction: column; */
+    display:grid;
+    grid-template-columns: 60% 40%;    
+    grid-template-areas: 
+    "left" 
+    "right";
+    align-items: center;
+    justify-content: space-evenly;
+  
+}
+.main1-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
+    grid-template-areas: left;
+    padding: 20px;
+}
+.main1-right {
+    grid-template-areas: right;
 }
 .sidebar {
     background-color: lightgray;
@@ -96,7 +120,6 @@ body {
     justify-items: center;
     justify-content: center;
      border: 2px solid grey;
-
      padding: 20px;
 }
 
@@ -136,19 +159,14 @@ body {
     padding: 0 3px;
 }
 
-.welcome {
-    background-image: url("../images/doctors-office-safe.jpg");
+img {
+    border-radius: 500px;
+    height: 400px;
+    width: 450px;
     background-position: center;
-    height: 40%;
-    width: 40%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    
+    padding: 30px;
 }
-.welcome-header {
-    padding: 0;
-    margin: 0;
-}
+
 .reports {
     text-align: center;
 }
@@ -196,6 +214,6 @@ body {
 }
 
 #treeView {
-    margin: 15px;
+    margin: 10px;
     
 }
