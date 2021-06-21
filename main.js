@@ -5,6 +5,8 @@ $(document).ready(function(){
 
 
 
+
+
 //////////////////////////////////// DATA FOR GRID/////////////////////////////////////
 
 $(function () { 
@@ -89,7 +91,7 @@ var medication =
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
 
     $("#grid").kendoGrid({
-        toolbar: ["excel", "pdf"],
+        toolbar: ["excel", "pdf", "search"],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -104,6 +106,9 @@ var medication =
                 repeatHeaders: true,
                 template: $("#page-template").html(),
                 scale: 0.8
+            },
+            search: {
+                fields: ["name", "doctor", "time", "id", "date"]
             },
         columns: [
         { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
