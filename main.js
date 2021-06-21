@@ -7,6 +7,8 @@ $(document).ready(function(){
 
 
 
+
+
 //////////////////////////////////// DATA FOR GRID/////////////////////////////////////
 
 $(function () { 
@@ -90,6 +92,53 @@ var medication =
 
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
 
+
+
+
+$(document).ready(function () {
+    var dataSource = new kendo.data.DataSource({
+        data: people,
+        schema: {
+            model: {
+                fields: {
+                    name: { type: "string" },
+                    age: { type: "number" },
+                    isOnLeave: { type: "boolean" }
+                }
+            }
+        }
+    });
+
+    $("#filter").kendoFilter({
+        dataSource: people,
+        expressionPreview: true, // Shows a text preview of the filter expression.
+        applyButton: true, // Shows the built-in Apply button.
+        fields: [ // Defining the fields is not mandatory. Otherwise, they will be taken from the data source schema.
+                // If you define the fields, their names and types must match the data source definition.
+            { name: "name", type: "string", label: "Name" },
+            { name: "age", type: "number", label: "Age" },
+            { name: "isOnLeave", type: "boolean", label: "On Vacation" }
+        ],
+        expression: { // Defining an initial filter expression is not required.
+            logic: "and",
+            filters: [
+                { field: "age", value: 30, operator: "gte" },
+                { field: "name", value: "Doe", operator: "contains" }
+            ]
+        }
+    }).data("kendoFilter").applyFilter();
+    // Chain the method call to immediately apply filtering after the widget initialization because an initial filter is set.
+
+    $("#listView").kendoListView({
+        dataSource: people,
+        template: kendo.template($("#item").html())
+    });
+
+
+
+
+
+
     $("#grid").kendoGrid({
         toolbar: ["excel", "pdf", "search"],
             excel: {
@@ -107,9 +156,8 @@ var medication =
                 template: $("#page-template").html(),
                 scale: 0.8
             },
-            search: {
-                fields: ["name", "doctor", "time", "id", "date"]
-            },
+           
+    
         columns: [
         { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
         { title: "ID", field: "id" },
@@ -122,7 +170,7 @@ var medication =
         data: people,
         pageSize: 10
     },
-    height: 500,
+    
     scrollable: true,
     pageable: true,
     sortable: {
@@ -131,7 +179,7 @@ var medication =
     groupable: true
     }); 
 
-
+});
 
 /////////////////////////////////// NAV TREE /////////////////////////////////////////////////////////////
 
@@ -811,4 +859,6 @@ $(document).ready(function() {
             }
         }
     });
-});});
+});
+});
+   
