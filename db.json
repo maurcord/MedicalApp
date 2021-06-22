@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  
+   "people": [
+    {
+      "name": "John Doe", "doctor": "10", "time":"9:00 am", "date": "04/21/21", "id":"1"
+    }]
+}

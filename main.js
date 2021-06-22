@@ -1,11 +1,43 @@
-$(document).ready(function(){
-    $("#main1").css("display", "none");
-    $("#main1").fadeIn(4000);
+
+
+
+
+ $(document).ready(function() {
+    $("#grid99").kendoGrid({
+        dataSource: {
+            data: people,
+            schema: {
+                model: {
+                    fields: {
+                        name: { type: "string", validation:{required: true} },
+                        doctor: { type: "string" },
+                        time: { type: "string" },
+                        date: { type: "string" },
+                        identification: { type: "string" }
+                    }
+                }
+            },
+            pageSize: 5
+        },
+        scrollable: true,
+        sortable: true,
+        filterable: true,
+        pageable: {
+            input: true,
+            numeric: false
+        },
+        toolbar: ["create"],
+        columns: [
+            { field: "name", title: "Name", format: "{0:c}", width: "130px" },
+            { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
+            { field: "time", title: "Time", width: "130px" },
+            { field: "date", title: "Date", width: "130px" },
+            { field: "identification", title: "ID", width: "130px"}, 
+            { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
+        ],
+        editable: "inline"
+    });
 });
-
-
-
-
 
 
 
@@ -88,54 +120,24 @@ var medication =
 {id: 7, medicationName:"Lexapro", type: "Antidepressant" },
 {id: 8, medicationName:"Paxil", type: "Antidepressant" },
 {id: 9, medicationName:"Vicodin", type: "Pain" },
-{id: 10, medicationName:"Percocet", type: "Pain" }] 
+{id: 10, medicationName:"Percocet", type: "Pain" }]
+
 
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
+// $(document).ready(function() {
+//    dataSource = new kendo.data.DataSource ({
+//         transport: {
+//             read: {
+//                 url: "/posts.json"
+//             }
+//         }
+//     }); 
 
+//     $("#posts").kendoGrid({
+//         dataSource: dataSource
+//     }); 
 
-
-
-$(document).ready(function () {
-    var dataSource = new kendo.data.DataSource({
-        data: people,
-        schema: {
-            model: {
-                fields: {
-                    name: { type: "string" },
-                    age: { type: "number" },
-                    isOnLeave: { type: "boolean" }
-                }
-            }
-        }
-    });
-
-    $("#filter").kendoFilter({
-        dataSource: people,
-        expressionPreview: true, // Shows a text preview of the filter expression.
-        applyButton: true, // Shows the built-in Apply button.
-        fields: [ // Defining the fields is not mandatory. Otherwise, they will be taken from the data source schema.
-                // If you define the fields, their names and types must match the data source definition.
-            { name: "name", type: "string", label: "Name" },
-            { name: "age", type: "number", label: "Age" },
-            { name: "isOnLeave", type: "boolean", label: "On Vacation" }
-        ],
-        expression: { // Defining an initial filter expression is not required.
-            logic: "and",
-            filters: [
-                { field: "age", value: 30, operator: "gte" },
-                { field: "name", value: "Doe", operator: "contains" }
-            ]
-        }
-    }).data("kendoFilter").applyFilter();
-    // Chain the method call to immediately apply filtering after the widget initialization because an initial filter is set.
-
-    $("#listView").kendoListView({
-        dataSource: people,
-        template: kendo.template($("#item").html())
-    });
-
-
-
+// });
 
 
 
@@ -156,21 +158,24 @@ $(document).ready(function () {
                 template: $("#page-template").html(),
                 scale: 0.8
             },
-           
-    
+            search: {
+                fields: ["name", "doctor", "time", "id", "date"]
+            },
         columns: [
+       
         { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
         { title: "ID", field: "id" },
         { title: "Date", field:"date" },
         { title: "Time", field:"time" },
         { title: "Patient", field: "name"},
-        { title: "Doctor", field: "doctor" } ],
+        { title: "Doctor", field: "doctor" } ], 
+        filterable: true,
 
     dataSource: {
         data: people,
         pageSize: 10
     },
-    
+    height: 500,
     scrollable: true,
     pageable: true,
     sortable: {
@@ -179,7 +184,7 @@ $(document).ready(function () {
     groupable: true
     }); 
 
-});
+
 
 /////////////////////////////////// NAV TREE /////////////////////////////////////////////////////////////
 
@@ -231,7 +236,7 @@ $(document).ready(function () {
     });
 });
 
-////////////////////////////////////////////////////// APPOINTMENT DETAIL FORM //////////////////////////////////////////
+// ////////////////////////////////////////////////////// APPOINTMENT DETAIL FORM //////////////////////////////////////////
 
 $(document).ready(function () {
     var validationSuccess = $("#validation-success");
@@ -850,6 +855,7 @@ sortable: {
 },
 groupable: true
 }); 
+});
 
 $(document).ready(function() {
     $("#tabstrip").kendoTabStrip({
@@ -860,5 +866,3 @@ $(document).ready(function() {
         }
     });
 });
-});
-   
