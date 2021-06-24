@@ -178,6 +178,11 @@ img {
 #grid {
    padding: 20px;
 }
+
+#grid .k-grid-header {
+    background-color: #0077b6;
+    
+}
 #grid2 {
     padding: 20px;
  }

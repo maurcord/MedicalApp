@@ -2,44 +2,6 @@
 
 
 
- $(document).ready(function() {
-    $("#grid99").kendoGrid({
-        dataSource: {
-            data: people,
-            schema: {
-                model: {
-                    fields: {
-                        name: { type: "string", validation:{required: true} },
-                        doctor: { type: "string" },
-                        time: { type: "string" },
-                        date: { type: "string" },
-                        identification: { type: "string" }
-                    }
-                }
-            },
-            pageSize: 5
-        },
-        scrollable: true,
-        sortable: true,
-        filterable: true,
-        pageable: {
-            input: true,
-            numeric: false
-        },
-        toolbar: ["create"],
-        columns: [
-            { field: "name", title: "Name", format: "{0:c}", width: "130px" },
-            { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
-            { field: "time", title: "Time", width: "130px" },
-            { field: "date", title: "Date", width: "130px" },
-            { field: "identification", title: "ID", width: "130px"}, 
-            { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
-        ],
-        editable: "inline"
-    });
-});
-
-
 
 //////////////////////////////////// DATA FOR GRID/////////////////////////////////////
 
@@ -124,25 +86,66 @@ var medication =
 
 
 ///////////////////////////      GRID  ///////////////////////////////////////////////////
-// $(document).ready(function() {
-//    dataSource = new kendo.data.DataSource ({
-//         transport: {
-//             read: {
-//                 url: "/posts.json"
-//             }
-//         }
-//     }); 
+    
 
-//     $("#posts").kendoGrid({
-//         dataSource: dataSource
-//     }); 
+ 
+    $("#grid99").kendoGrid({
+        toolbar: ["excel","pdf"],
+        excel: {
+            fileName: "Kendo UI Grid Export.xlsx",
+            proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+            filterable: true
+        },
+        pdf: {
+            allPages: true,
+            avoidLinks: true,
+            paperSize: "A4",
+            margin: { top: "2cm", left: "1cm", right: "1cm", bottom: "1cm" },
+            landscape: true,
+            repeatHeaders: true,
+            template: $("#page-template").html(),
+            scale: 0.8
+        },
+        dataSource: {
+            data: people,
+            schema: {
+                model: {
+                    fields: {
+                        name: { type: "string", validation:{required: true} },
+                        doctor: { type: "string", validation:{required: true} },
+                        time: { type: "string", validation:{required: true} },
+                        date: { type: "string", validation:{required: true} },
+                        identification: { type: "string", validation:{required: true} }
+                    }
+                }
+            },
+            pageSize: 10
+        },
+        scrollable: true,
+        sortable: true,
+        filterable: true,
+        pageable: {
+            input: true,
+            numeric: false
+        },
+        
+        columns: [
+            { field: "name", title: "Name", format: "{0:c}", width: "130px" },
+            { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
+            { field: "time", title: "Time", width: "130px" },
+            { field: "date", title: "Date", width: "130px" },
+            { field: "identification", title: "ID", width: "130px"}, 
+            { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
+        ],
+        editable: "inline"
+    });
 
-// });
+
 
 
 
     $("#grid").kendoGrid({
-        toolbar: ["excel", "pdf", "search"],
+        toolbar: ["excel", "pdf",{name: "create"}, {name: "save"},{name: "cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -158,10 +161,9 @@ var medication =
                 template: $("#page-template").html(),
                 scale: 0.8
             },
-            search: {
-                fields: ["name", "doctor", "time", "id", "date"]
-            },
-      
+            // search: {
+            //     fields: ["name", "doctor", "time", "id", "date"]
+            // },
         columns: [
        
         { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
@@ -171,12 +173,12 @@ var medication =
         { title: "Patient", field: "name"},
         { title: "Doctor", field: "doctor" } ], 
         filterable: true,
-
+            editable: true,
     dataSource: {
         data: people,
         pageSize: 10
     },
-    height: 500,
+    height: 600,
     scrollable: true,
     pageable: true,
     filterable: {
@@ -201,44 +203,44 @@ $(document).ready(function() {
 
 //////////////////////////////////////// APPOINTMENT SEARCH FORM////////////////////////////////////////////
 
-$(document).ready(function () {
-    var validationSuccess = $("#validation-success");
+// $(document).ready(function () {
+//     var validationSuccess = $("#validation-success");
 
-    $("#exampleform").kendoForm({
-        orientation: "horizontal",
-        formData: {
-            Id: "",
-            Patient: Number,
-            Doctor: Number,
-            Time: "Time",
-            Date: new Date(),
-            Agree: false
-        },
-        height: 500 ,
-        items: [{
-            type: "group",
-            label: "Filters",
-            items: [
-                {field: "Id", editor: "NumericTextBox", label: "ID:",validation: { required: true } },
-                { field: "Patient", editor: "NumericTextBox", label: "Patient:", validation: { required: true} },
-                { field: "Doctor", editor: "NumericTextBox", label: "Doctor:", validation: { required: true} },
-                { field: "Time", label: "Time:", validation: { required: true} },
-                { field: "Date", editor: "DatePicker", label: "Date:", validation: { required: true} },
-                { field: "Reason", label: "Reason:", validation: { required: true} },
-            ]   
-        }],
-        validateField: function(e) {
-            validationSuccess.html("");
-        },
-        search: function(e) {
-            e.preventDefault();
-            validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
-        },
-        clear: function(ev) {
-            validationSuccess.html("");
-        }
-    });
-});
+//     $("#exampleform").kendoForm({
+//         orientation: "horizontal",
+//         formData: {
+//             Id: "",
+//             Patient: Number,
+//             Doctor: Number,
+//             Time: "Time",
+//             Date: new Date(),
+//             Agree: false
+//         },
+//         height: 500 ,
+//         items: [{
+//             type: "group",
+//             label: "Filters",
+//             items: [
+//                 {field: "Id", editor: "NumericTextBox", label: "ID:",validation: { required: true } },
+//                 { field: "Patient", editor: "NumericTextBox", label: "Patient:", validation: { required: true} },
+//                 { field: "Doctor", editor: "NumericTextBox", label: "Doctor:", validation: { required: true} },
+//                 { field: "Time", label: "Time:", validation: { required: true} },
+//                 { field: "Date", editor: "DatePicker", label: "Date:", validation: { required: true} },
+//                 { field: "Reason", label: "Reason:", validation: { required: true} },
+//             ]   
+//         }],
+//         validateField: function(e) {
+//             validationSuccess.html("");
+//         },
+//         search: function(e) {
+//             e.preventDefault();
+//             validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+//         },
+//         clear: function(ev) {
+//             validationSuccess.html("");
+//         }
+//     });
+// });
 
 // ////////////////////////////////////////////////////// APPOINTMENT DETAIL FORM //////////////////////////////////////////
 
