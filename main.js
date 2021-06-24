@@ -2,42 +2,42 @@
 
 
 
-//  $(document).ready(function() {
-//     $("#grid99").kendoGrid({
-//         dataSource: {
-//             data: people,
-//             schema: {
-//                 model: {
-//                     fields: {
-//                         name: { type: "string", validation:{required: true} },
-//                         doctor: { type: "string" },
-//                         time: { type: "string" },
-//                         date: { type: "string" },
-//                         identification: { type: "string" }
-//                     }
-//                 }
-//             },
-//             pageSize: 5
-//         },
-//         scrollable: true,
-//         sortable: true,
-//         filterable: true,
-//         pageable: {
-//             input: true,
-//             numeric: false
-//         },
-//         toolbar: ["create"],
-//         columns: [
-//             { field: "name", title: "Name", format: "{0:c}", width: "130px" },
-//             { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
-//             { field: "time", title: "Time", width: "130px" },
-//             { field: "date", title: "Date", width: "130px" },
-//             { field: "identification", title: "ID", width: "130px"}, 
-//             { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
-//         ],
-//         editable: "inline"
-//     });
-// });
+ $(document).ready(function() {
+    $("#grid99").kendoGrid({
+        dataSource: {
+            data: people,
+            schema: {
+                model: {
+                    fields: {
+                        name: { type: "string", validation:{required: true} },
+                        doctor: { type: "string" },
+                        time: { type: "string" },
+                        date: { type: "string" },
+                        identification: { type: "string" }
+                    }
+                }
+            },
+            pageSize: 5
+        },
+        scrollable: true,
+        sortable: true,
+        filterable: true,
+        pageable: {
+            input: true,
+            numeric: false
+        },
+        toolbar: ["create"],
+        columns: [
+            { field: "name", title: "Name", format: "{0:c}", width: "130px" },
+            { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
+            { field: "time", title: "Time", width: "130px" },
+            { field: "date", title: "Date", width: "130px" },
+            { field: "identification", title: "ID", width: "130px"}, 
+            { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
+        ],
+        editable: "inline"
+    });
+});
 
 
 
@@ -161,10 +161,11 @@ var medication =
             search: {
                 fields: ["name", "doctor", "time", "id", "date"]
             },
+      
         columns: [
        
         { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
-        { title: "ID", field: "id" },
+        { title: "ID", field: "id"},
         { title: "Date", field:"date" },
         { title: "Time", field:"time" },
         { title: "Patient", field: "name"},
@@ -178,6 +179,9 @@ var medication =
     height: 500,
     scrollable: true,
     pageable: true,
+    filterable: {
+        mode: "row"
+    },
     sortable: {
         mode: "multiple"
     },
