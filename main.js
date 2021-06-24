@@ -2,42 +2,42 @@
 
 
 
- $(document).ready(function() {
-    $("#grid99").kendoGrid({
-        dataSource: {
-            data: people,
-            schema: {
-                model: {
-                    fields: {
-                        name: { type: "string", validation:{required: true} },
-                        doctor: { type: "string" },
-                        time: { type: "string" },
-                        date: { type: "string" },
-                        identification: { type: "string" }
-                    }
-                }
-            },
-            pageSize: 5
-        },
-        scrollable: true,
-        sortable: true,
-        filterable: true,
-        pageable: {
-            input: true,
-            numeric: false
-        },
-        toolbar: ["create"],
-        columns: [
-            { field: "name", title: "Name", format: "{0:c}", width: "130px" },
-            { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
-            { field: "time", title: "Time", width: "130px" },
-            { field: "date", title: "Date", width: "130px" },
-            { field: "identification", title: "ID", width: "130px"}, 
-            { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
-        ],
-        editable: "inline"
-    });
-});
+//  $(document).ready(function() {
+//     $("#grid99").kendoGrid({
+//         dataSource: {
+//             data: people,
+//             schema: {
+//                 model: {
+//                     fields: {
+//                         name: { type: "string", validation:{required: true} },
+//                         doctor: { type: "string" },
+//                         time: { type: "string" },
+//                         date: { type: "string" },
+//                         identification: { type: "string" }
+//                     }
+//                 }
+//             },
+//             pageSize: 5
+//         },
+//         scrollable: true,
+//         sortable: true,
+//         filterable: true,
+//         pageable: {
+//             input: true,
+//             numeric: false
+//         },
+//         toolbar: ["create"],
+//         columns: [
+//             { field: "name", title: "Name", format: "{0:c}", width: "130px" },
+//             { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
+//             { field: "time", title: "Time", width: "130px" },
+//             { field: "date", title: "Date", width: "130px" },
+//             { field: "identification", title: "ID", width: "130px"}, 
+//             { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
+//         ],
+//         editable: "inline"
+//     });
+// });
 
 
 
@@ -866,3 +866,43 @@ $(document).ready(function() {
         }
     });
 });
+
+$(document).ready(function() {
+    $("#grid98").kendoGrid({
+        dataSource: {
+            transport: {
+                read: "http://localhost:3000/posts",
+                dataType: "jsonp"
+            },
+            schema: {
+                model: {
+                    fields: {
+                        name: { type: "string", validation:{required: true} },
+                        doctor: { type: "string" },
+                        time: { type: "string" },
+                        date: { type: "string" },
+                        identification: { type: "string" }
+                    }
+                }
+            },
+            pageSize: 5
+        },
+        scrollable: true,
+        sortable: true,
+        filterable: true,
+        pageable: {
+            input: true,
+            numeric: false
+        },
+        toolbar: ["create"],
+        columns: [
+            { field: "name", title: "Name", format: "{0:c}", width: "130px" },
+            { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
+            { field: "time", title: "Time", width: "130px" },
+            { field: "date", title: "Date", width: "130px" },
+            { field: "identification", title: "ID", width: "130px"}, 
+            { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
+        ],
+        editable: "inline"
+    });
+    });
