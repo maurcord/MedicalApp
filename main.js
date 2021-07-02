@@ -31,15 +31,18 @@ $(function () {
     { name: "Jordan Doe", doctor: "32", time:"8:00 am", date: "04/21/21", id:"21"},
     { name: "Justin Doe", doctor: "52", time:"11:00 am", date: "04/21/21", id:"22"},
     { name: "Jill Doe", doctor: "14", time:"9:00 am", date: "04/21/21", id:"23"}
-
-   
 ]
 var people2 = 
 [{ id:"1", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
-{ id:"2",  firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None"  },
-{ id:"3", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
-{ id:"4", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
-{ id:"5", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" }]
+{ id:"2",  firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Silver Spring, MD", primaryInsurance:"Blue Cross", secondaryInsurance:"None"  },
+{ id:"3", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Mclean, VA", primaryInsurance:"United Healthcare", secondaryInsurance:"None" },
+{ id:"4", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Kaiser Permenente", secondaryInsurance:"None" },
+{ id:"5", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Falls Church, VA", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"6", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Arlington, VA", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"7",  firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "No", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None"  },
+{ id:"8", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Washington, D.C", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"9", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Bethesda, MD", primaryInsurance:"Blue Cross", secondaryInsurance:"None" },
+{ id:"10", firstName:"John", lastName:"Doe", dateOfBirth:"05/4/2021", active: "Yes", city: "Silver Spring, MD", primaryInsurance:"Blue Cross", secondaryInsurance:"None" }]
  
 var people3 = 
     [{ id:"1", date:"05/4/2021", weight: "150lbs", height: "5'11", temperature:"97.1", bloodPressure:"145/78", pulse: 68 },
@@ -468,7 +471,7 @@ $(document).ready(function () {
 });
 ////////////////////////////////////// Patient Search Grid //////////////////////////////////////
 $("#grid2").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf", {name: "create"}, {name: "save"},{name: "cancel"}],
     
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
@@ -501,9 +504,13 @@ dataSource: {
     data: people2,
     pageSize: 10
 },
-height: 500,
+
 scrollable: true,
+editable: true,
 pageable: true,
+filterable: {
+    mode: "row"
+},
 sortable: {
     mode: "multiple"
 },
@@ -516,7 +523,7 @@ groupable: true
 
 ///////////////////////// PATIENT VITALS GRID //////////////////////////
 $("#grid3").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf", {name: "create"}, {name: "save"},{name: "cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -547,9 +554,13 @@ dataSource: {
     data: people3,
     pageSize: 10
 },
-height: 500,
+height: 600,
 scrollable: true,
 pageable: true,
+editable: true,
+filterable: {
+    mode: "row"
+},
 sortable: {
     mode: "multiple"
 },
@@ -558,7 +569,7 @@ groupable: true
 
 ////////////////////////////  PATIENT TREATMENTS TAB //////////////////////////
 $("#grid4").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf",  {name: "create"}, {name: "save"},{name: "cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -589,8 +600,13 @@ dataSource: {
     data: people3,
     pageSize: 10
 },
-height: 500,
+height: 600,
 scrollable: true,
+editable: true,
+filterable:
+{
+    mode: 'row'
+},
 pageable: true,
 sortable: {
     mode: "multiple"
@@ -601,7 +617,7 @@ groupable: true
 ////////////////////////////////// PATIENT REFERRALS TAB //////////////////////////////
 
 $("#grid5").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf",  {name: "create"}, {name: "save"},{name: "cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -635,8 +651,12 @@ dataSource: {
     data: people3,
     pageSize: 10
 },
-height: 500,
+height: 600,
 scrollable: true,
+editable: true,
+filterable: {
+    mode: "row"
+},
 pageable: true,
 sortable: {
     mode: "multiple"
@@ -646,7 +666,7 @@ groupable: true
 
 /////////////////// DOCTOR SEARCH GRID ///////////////////////////////
 $("#grid6").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf",{name: "create"}, {name: "save"},{name: "cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -674,8 +694,12 @@ dataSource: {
     pageSize: 10
 },
 height: 500,
+editable: true,
 scrollable: true,
 pageable: true,
+filterable: {
+    mode: "row"
+},
 sortable: {
     mode: "multiple"
 },
@@ -683,7 +707,7 @@ groupable: true
 }); 
 
 $("#grid7").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf", {name: "create"}, {name: "save"}, {name:" cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -701,8 +725,8 @@ $("#grid7").kendoGrid({
             },
         
     columns: [
-    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
-    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
+    // {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
+    // {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
     { title: "ID", field: "id" },
     { title: "Patient", field: "patient" },
     { title: "Doctor", field:"doctorName"},
@@ -717,6 +741,9 @@ dataSource: {
     pageSize: 10
 },
 height: 500,
+editable: true,
+filterable: {
+    mode: "row"},
 scrollable: true,
 pageable: true,
 sortable: {
@@ -726,7 +753,7 @@ groupable: true
 }); 
 
 $("#grid8").kendoGrid({
-    toolbar: ["excel","pdf"],
+    toolbar: ["excel","pdf",  {name: "create"}, {name: "save"}, {name:" cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -744,8 +771,8 @@ $("#grid8").kendoGrid({
             },
         
     columns: [
-    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
-    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
+    // {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Edit</a>"},
+    // {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Delete</a>"},
     { title: "ID", field: "id" },
     { title: "Doctor", field:"doctorName"},
     { title: "Specialty", field:"specialty"},
@@ -760,6 +787,11 @@ dataSource: {
     pageSize: 10
 },
 height: 500,
+editable: true,
+filterable:
+{
+    mode:"row"
+},
 scrollable: true,
 pageable: true,
 sortable: {
@@ -912,3 +944,8 @@ $(document).ready(function() {
         editable: "inline"
     });
     });
+
+    $(document).ready(function() {
+        $("#treeView").kendoTreeView();
+    });  
+    
