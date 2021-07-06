@@ -2,8 +2,6 @@
 
 
 
-
-
 $(document).ready(function() {
     $("#testGrid").kendoGrid({
         dataSource: {
@@ -45,29 +43,47 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function () {
 
-    $("a, .k-button.a").click(function() {
-        dialog.kendoDialog({
-            width: "450px",
-            title: "Appointment Detail",
-            // closable: true,
-            modal: true,
-            content: "<p>ID: 1, Date: 02/21/21, Time: 9:00am, Patient: John Doe, Doctor: 10<p>",
-            actions: [
-                { text: "Ok" }
-            ],
-            close: onClose
-        });
-    });
-    $("#openButton").click(function(){
-        var dialog = $("#dialog").data("kendoDialog");
-        dialog.open();
-    });
+$(document).ready(function() {
+    $(".a,.k-button.a").kendoDialog({
+    width: 200,
+    height: 200,
+    title: "Dialog Title",
+    visible: false
+}).data("kendoDialog");
+});
 
+// $(document).ready(function () {
+//     $("a,.k-button.a").click(function() {
+//          dialog.kendoDialog({
+//         width: "450px",
+//         title: "Appointment Detail",
+//         closable: true,
+//         modal: true,
+//         content: "<p>ID: 1, Date: 02/21/21, Time: 9:00am, Patient: John Doe, Doctor: 10<p>",
+//         actions: [
+
+//             { text: "Ok" }
+//         ],
+//         close: onClose
+//     });
+    
+    
+//     var dialog = $('#dialog'),
+//         undo = $("#undo");
+
+//     undo.click(function () {
+//         dialog.data("kendoDialog").open();
+//         undo.fadeOut();
+//     });
+
+//     function onClose() {
+//         undo.fadeIn();
+//     }
     
    
-});
+// });
+// });
 var people =
    [{ name: "John Doe", doctor: "10", time:"9:00 am", date: "04/21/21", id:"1"},
     { name: "Jane Doe", doctor: "22", time:"10:00 am", date: "05/1/21", id:"2"},
@@ -97,16 +113,3 @@ var people =
 
 
 
-$(document).ready(function(){
-    $("#dialog").kendoDialog({
-        width: 200,
-        height: 200,
-        title: "Patient",
-        visible: false
-    }).data("kendoDialog");
-});
-
-$("#openButton").click(function(){
-    var dialog = $("#dialog").data("kendoDialog");
-    dialog.open();
-});
