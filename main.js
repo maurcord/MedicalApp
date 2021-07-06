@@ -801,11 +801,8 @@ groupable: true
 }); 
 
 $("#grid9").kendoGrid({
-    toolbar: ["New","excel","pdf"],
+    toolbar: ["excel","pdf", {name: "create"}, {name: "save"}, {name:" cancel"}],
 
-             New: {
-                  filterable: true
-            },
 
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
@@ -841,6 +838,11 @@ dataSource: {
 height: 500,
 scrollable: true,
 pageable: true,
+editable: true,
+filterable:
+{
+    mode: "row"
+},
 sortable: {
     mode: "multiple"
 },
@@ -848,11 +850,8 @@ groupable: true
 }); 
 
 $("#grid10").kendoGrid({
-    toolbar: ["New","excel","pdf"],
-            New: {
-                filterable: true
-            },
-
+    toolbar: ["excel","pdf",{name: "create"}, {name: "save"}, {name:" cancel"}],
+          
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -886,6 +885,8 @@ dataSource: {
     pageSize: 10
 },
 height: 500,
+editable: true,
+filterable: {mode: "row"},
 scrollable: true,
 pageable: true,
 sortable: {

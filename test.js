@@ -51,28 +51,20 @@ $(document).ready(function () {
         dialog.kendoDialog({
             width: "450px",
             title: "Appointment Detail",
-            closable: true,
+            // closable: true,
             modal: true,
             content: "<p>ID: 1, Date: 02/21/21, Time: 9:00am, Patient: John Doe, Doctor: 10<p>",
             actions: [
-    
                 { text: "Ok" }
             ],
             close: onClose
         });
     });
-    
-    var dialog = $('#dialog'),
-        undo = $("#undo");
-
-    undo.click(function () {
-        dialog.data("kendoDialog").open();
-        undo.fadeOut();
+    $("#openButton").click(function(){
+        var dialog = $("#dialog").data("kendoDialog");
+        dialog.open();
     });
 
-    function onClose() {
-        undo.fadeIn();
-    }
     
    
 });
@@ -105,3 +97,16 @@ var people =
 
 
 
+$(document).ready(function(){
+    $("#dialog").kendoDialog({
+        width: 200,
+        height: 200,
+        title: "Patient",
+        visible: false
+    }).data("kendoDialog");
+});
+
+$("#openButton").click(function(){
+    var dialog = $("#dialog").data("kendoDialog");
+    dialog.open();
+});
