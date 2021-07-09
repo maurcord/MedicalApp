@@ -1,7 +1,4 @@
 
-
-
-
 $(document).ready(function() {
     $("#testGrid").kendoGrid({
         dataSource: {
@@ -31,7 +28,7 @@ $(document).ready(function() {
         },
         toolbar: [{name: "create"}, {name: "save"},{name: "cancel"}],
         columns: [
-            { template: "<a class='k-button a'>Select</a>", width: 100}, 
+            { template: "<a class='k-button a'>Appointment Detail</a>", width: 150}, 
             { field: "name", title: "Name", format: "{0:c}", width: "130px" },
             { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
             { field: "time", title: "Time", width: "130px" },
@@ -44,46 +41,6 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-    $(".a,.k-button.a").kendoDialog({
-    width: 200,
-    height: 200,
-    title: "Dialog Title",
-    visible: false
-}).data("kendoDialog");
-});
-
-// $(document).ready(function () {
-//     $("a,.k-button.a").click(function() {
-//          dialog.kendoDialog({
-//         width: "450px",
-//         title: "Appointment Detail",
-//         closable: true,
-//         modal: true,
-//         content: "<p>ID: 1, Date: 02/21/21, Time: 9:00am, Patient: John Doe, Doctor: 10<p>",
-//         actions: [
-
-//             { text: "Ok" }
-//         ],
-//         close: onClose
-//     });
-    
-    
-//     var dialog = $('#dialog'),
-//         undo = $("#undo");
-
-//     undo.click(function () {
-//         dialog.data("kendoDialog").open();
-//         undo.fadeOut();
-//     });
-
-//     function onClose() {
-//         undo.fadeIn();
-//     }
-    
-   
-// });
-// });
 var people =
    [{ name: "John Doe", doctor: "10", time:"9:00 am", date: "04/21/21", id:"1"},
     { name: "Jane Doe", doctor: "22", time:"10:00 am", date: "05/1/21", id:"2"},
@@ -113,3 +70,55 @@ var people =
 
 
 
+$(document).ready(function() {
+    $("#treeView").kendoTreeView();
+});  
+
+$(document).ready(function(){
+    // $("#dialog").kendoDialog({
+    //     width: 500,
+    //     height: 500,
+    //     title: "Dialog Title",
+    //     visible: false,
+    //     closable: true,
+    //     modal: true
+    // }).data("kendoDialog");;
+  
+    $("#dialog").kendoDialog({
+        width: "600px",
+        height: "600px",
+        title: "Appointment Detail",
+        visible: false,
+        closable: true,
+        modal: true,
+        content: "<p>ID: 1<p>" +
+         "<p>Patient: John Doe </p>" +
+          "<p> Doctor: 10 </p>" +
+           "<p>Time: 9:00am </p>" + 
+           "<p>Patient ID: 1 </p>" + 
+           "<p>Date: 04/21/2021 </p>" + 
+           "<p>Reason: Upset Stomach, Nausea, Headache </p>" +
+           "<p>Opened By: Dr. Who</p>" +
+           "<p>Opened On: 04/02/2021 </p>" +
+           "<p>Edited By: N/A </p>" +
+           "<p>Edited On: N/A </p>"
+         ,
+        actions: [
+        
+            { text: 'OK', primary: true }
+        ]
+    }).data("kendoDialog");;
+
+$("a, .k-button a ").click(function(){
+    var dialog = $("#dialog").data("kendoDialog");
+    dialog.open();
+   
+});
+
+// $("a, .k-button a ").click(function(){
+//     var dialog = $("#dialog").data("kendoDialog");
+//     dialog.close();
+   
+// });
+
+});
