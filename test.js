@@ -101,7 +101,8 @@ $(document).ready(function(){
            "<p>Opened By: Dr. Who</p>" +
            "<p>Opened On: 04/02/2021 </p>" +
            "<p>Edited By: N/A </p>" +
-           "<p>Edited On: N/A </p>"
+           "<p>Edited On: N/A </p>" +
+           "<p>Notes: </p>"
          ,
         actions: [
         
