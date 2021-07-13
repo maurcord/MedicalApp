@@ -169,7 +169,7 @@ var medication =
             // },
         columns: [
        
-        { template: "<a class='k-button a' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},            
+        { template: "<a class='k-button a'>Select</a>", width: 100},            
         { title: "ID", field: "id"},
         { title: "Date", field:"date" },
         { title: "Time", field:"time" },
@@ -950,3 +950,41 @@ $(document).ready(function() {
         $("#treeView").kendoTreeView();
     });  
     
+    $(document).ready(function() {
+        $("#treeView").kendoTreeView();
+    });  
+    
+    $(document).ready(function(){  
+        $("#dialog").kendoDialog({
+            width: "600px",
+            height: "600px",
+            title: "Appointment Detail",
+            visible: false,
+            closable: true,
+            modal: true,
+            content: "<p>ID: 1<p>" +
+             "<p>Patient: John Doe </p>" +
+              "<p> Doctor: 10 </p>" +
+               "<p>Time: 9:00am </p>" + 
+               "<p>Patient ID: 1 </p>" + 
+               "<p>Date: 04/21/2021 </p>" + 
+               "<p>Reason: Upset Stomach, Nausea, Headache </p>" +
+               "<p>Opened By: Dr. Who</p>" +
+               "<p>Opened On: 04/02/2021 </p>" +
+               "<p>Edited By: N/A </p>" +
+               "<p>Edited On: N/A </p>" +
+               "<p>Notes: </p>"
+             ,
+            actions: [
+            
+                { text: 'OK', primary: true }
+            ]
+        }).data("kendoDialog");;
+    
+    $("a, .k-button a ").click(function(){
+        var dialog = $("#dialog").data("kendoDialog");
+        dialog.open();
+       
+    });
+    
+    });

@@ -74,16 +74,7 @@ $(document).ready(function() {
     $("#treeView").kendoTreeView();
 });  
 
-$(document).ready(function(){
-    // $("#dialog").kendoDialog({
-    //     width: 500,
-    //     height: 500,
-    //     title: "Dialog Title",
-    //     visible: false,
-    //     closable: true,
-    //     modal: true
-    // }).data("kendoDialog");;
-  
+$(document).ready(function(){  
     $("#dialog").kendoDialog({
         width: "600px",
         height: "600px",
@@ -115,11 +106,5 @@ $("a, .k-button a ").click(function(){
     dialog.open();
    
 });
-
-// $("a, .k-button a ").click(function(){
-//     var dialog = $("#dialog").data("kendoDialog");
-//     dialog.close();
-   
-// });
 
 });
