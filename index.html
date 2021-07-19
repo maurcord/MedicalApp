@@ -46,7 +46,7 @@
         <a class="nav1" href="reports.html">Reports</a>
         <i class="fas fa-hospital"></i>
         <a class="nav1" href="administration.html">Administration</a>
-        <a id="login" class="login-button nav1" onclick="document.getElementById('id01').style.display='block'">Log In</a>
+        <a id="login" class="login-button, nav1" onclick="document.getElementById('id01').style.display='block'">Log In</a>
     </nav>
    
     <div class="main-container1">
@@ -62,7 +62,7 @@
             <div class="main2">
                 <div class="welcome-intro"><h1>Whether you are a dentist with one staff, multi-location clinics, an Academic institution, 
                     or a DSO with multiple offices, Medical is customizable and configurable for all your patient communication needs.</h1></div>
-                <div class="medical-picture"> </div> 
+                <!-- <div class="medical-picture"> </div>  -->
              </div>    
     </div> 
     <footer class="footer">
@@ -81,7 +81,7 @@
     <!-- Modal Content -->
     <form class="modal-content animate" action="/action_page.php">
       <div class="imgcontainer">
-        <img src="./MedicalLogo.png" alt="Avatar" class="avatar">
+        <img src="./MedicalLogo.png" alt="Avatar" class="avatar" style="margin-left: 350px;">
       </div>
   
       <div class="container">
@@ -97,8 +97,8 @@
         </label>
       </div>
   
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <div class="container" style="background-color: #0077b6">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background-color: lightgray;">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
     </form>

@@ -106,17 +106,20 @@ body {
    
 }
 .main2 {
+   height: 800px;
    display: flex;
-   height: 1000px;
-   flex-direction: row;
-   justify-content: center;
-    
+    text-align: center;
+    margin: auto 0;
 }
-.medical-intro {
-    border: 2px red solid;
-}
-.medical-picture {
 
+.welcome-intro{
+    margin-top: 300px;
+    padding: 20px;
+}
+/* .medical-intro {
+    border: 2px red solid;
+} */
+.medical-picture {
 width: 100%;
 background-position: center; 
 background-repeat: no-repeat;
@@ -132,11 +135,12 @@ border: 2px red solid;
     justify-content: center;
     justify-items: start;
    color: white;
-    height: 150px;
+    height: 80px;
 }
 .footer-links {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
   
 }
 .sidebar {
@@ -304,7 +308,7 @@ img {
     margin: 10px;
     
 }
-.login-button {
+/* .login-button {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -312,7 +316,7 @@ img {
     width: 100px;
     margin-left: 960px;
     padding: 10px;
-}
+} */
 
 
 /* The Modal (background) */
@@ -334,8 +338,8 @@ img {
   .modal-content {
     background-color: #0077b6;
     margin: 5px auto; /* 15% from the top and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border: 5px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
