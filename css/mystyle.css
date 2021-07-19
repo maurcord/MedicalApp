@@ -160,6 +160,15 @@ border: 2px red solid;
     border: 2px black solid;
     font-size: 12px;
     text-align: center;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
 }
 .example-form{
     display: flex;
