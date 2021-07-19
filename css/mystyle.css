@@ -36,9 +36,9 @@ body {
     text-decoration: none;
    
 } 
- #login {
+ /* #login {
     margin-left: 18px;
-} 
+}  */
 .medical {
     background-image: url("/MedicalLogo.png");
     height: 200px;

@@ -46,7 +46,8 @@
         <a class="nav1" href="reports.html">Reports</a>
         <i class="fas fa-hospital"></i>
         <a class="nav1" href="administration.html">Administration</a>
-        <a id="login" class="login-button, nav1" onclick="document.getElementById('id01').style.display='block'">Log In</a>
+        <i class="fas fa-sign-in-alt"></i>
+        <a id="login" class="login-button, nav1"  onclick="document.getElementById('id01').style.display='block'">Log In</a>
     </nav>
    
     <div class="main-container1">
@@ -81,24 +82,24 @@
     <!-- Modal Content -->
     <form class="modal-content animate" action="/action_page.php">
       <div class="imgcontainer">
-        <img src="./MedicalLogo.png" alt="Avatar" class="avatar" style="margin-left: 350px;">
+        <img src="./MedicalLogo.png" alt="Avatar" class="avatar" style="height:250px; width:250px; display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: center; justify-items: center;">
       </div>
   
       <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input style= "color: black;" type="text" placeholder="Enter Username" name="uname" required>
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input style= "color: black;" type="password" placeholder="Enter Password" name="psw" required>
   
-        <button type="submit">Login</button>
+        <button style="background-color: #03045e;" type="submit">Login</button>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
       </div>
   
       <div class="container" style="background-color: #0077b6">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background-color: lightgray;">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background-color: #03045e;">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
     </form>
