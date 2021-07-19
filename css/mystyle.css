@@ -106,8 +106,8 @@ body {
    
 }
 .main2 {
-   height: 800px;
-   display: flex;
+    height: 800px;
+    display: flex;
     text-align: center;
     margin: auto 0;
 }

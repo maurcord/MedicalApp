@@ -169,7 +169,7 @@ var medication =
             // },
         columns: [
        
-        { template: "<a class='k-button a'>Select</a>", width: 100},            
+        { template: "<a class='k-button gridButton'>Appointment Detail</a>", width: 160},            
         { title: "ID", field: "id"},
         { title: "Date", field:"date" },
         { title: "Time", field:"time" },
@@ -981,7 +981,7 @@ $(document).ready(function() {
             ]
         }).data("kendoDialog");;
     
-    $("a, .k-button a ").click(function(){
+    $(".gridButton ").click(function(){
         var dialog = $("#dialog").data("kendoDialog");
         dialog.open();
        
