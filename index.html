@@ -97,28 +97,30 @@
   
     <!-- Modal Content -->
     <form class="modal-content animate" action="/action_page.php">
-      <div class="imgcontainer" style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: center; justify-items: center;"">
-        <img src="./MedicalLogo.png" alt="Avatar" class="avatar" style="height:250px; width:250px;">
+      <div class="imgcontainer">
+        <img src="./Medical Logo.png" alt="Avatar" class="avatar" style="height:100px; width:100px;">
+        <h1 class="medical-heading">Medical</h1>
       </div>
   
       <div class="container">
-        <label for="uname"><b>Username</b></label>
+        <label class="usrname" for="uname"><b >Username</b></label>
         <input style= "color: black;" type="text" placeholder="Enter Username" name="uname" required>
   
-        <label for="psw"><b>Password</b></label>
+        <label class="password-label" for="psw"><b class="psw">Password</b></label>
         <input style= "color: black;" type="password" placeholder="Enter Password" name="psw" required>
-  
-        <button style="background-color: #03045e;" type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-      </div>
-  
-      <div class="container" style="background-color: #0077b6">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background-color: #03045e;">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-      </div>
-    </form>
+        
+        <div class="login-buttons">
+        <button class="login-button" style="background-color: #0077b6; color: white" type="submit">Login</button> 
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background-color: #0077b6; color:white">Cancel</button>
+        </div>
+
+        <label> <input type="checkbox" checked="checked" name="remember"> Remember me  </label>
+        <span class="login-button">Forgot <a href="#">password?</a></span>
+
+        </div>
+
+       </div>
+    
   </div>
 
    </div>
