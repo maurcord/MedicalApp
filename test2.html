@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <!-- <script src="./main.js"></script> -->
+    <script src="./test.js  "></script>
+    <!-- <script src="./people.js"></script> -->
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+  <script src="https://kit.fontawesome.com/894dc2f90d.js" crossorigin="anonymous"></script>
+  <!-- <base href="https://demos.telerik.com/kendo-ui/grid/index"> -->
+   
+   
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.1.330/js/kendo.all.min.js"></script>
+    
+<!-- <link rel="stylesheet" href="/css/skeleton.css"> -->
+<link rel="stylesheet" href="css/mystyle.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.common.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.default-v2.min.css" />
+<link rel="stylesheet" href="/css/normalize.css">
+ <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" /> -->
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap" rel="stylesheet">
+<script src="https://kendo.cdn.telerik.com/2021.1.330/js/angular.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2021.2.616/js/kendo.all.min.js"></script>    
+ 
+</head>
+<body>
+    <script src="https://kendo.cdn.telerik.com/2021.1.330/js/jszip.min.js"></script>
+    <header class="header">
+        <h1>Welcome to Medical</h1>
+    </header>
+
+    <div id="example">
+        <!-- <nav class="nav">
+        <div id="megaStore" class= "nav1" style="color: white">
+          
+          <ul id="menu">
+                <li>
+                    My Appointments
+                    <ul>
+                       
+                        <li>
+                           
+                            <a class="nav1" href='appointmentSearch.html'>Appointment Search</a>
+                            
+                        </li>
+                        <li>
+                            Appointment Detail
+                        
+                        </li>
+                      
+                    </ul>
+                </li>
+              
+             
+            </ul>
+        </div>
+</nav> -->
+
+
+
+
+     <nav class="nav">
+        <i class="fas fa-clinic-medical"></i>
+        <a class="nav1" href='index.html'>Home</a>
+        <i class="fas fa-user-md"></i>
+      <div id="appointment-dropdown" class= "nav1" style="color: white"> 
+        <ul id="menu">
+            <li>
+                 My Appointments
+                      <ul>
+                          <li>
+                              <a class="nav1" href='appointmentSearch.html'>Appointment Search</a>
+                          </li>
+                          <li>
+                            <a class="nav1" href='appointmentDetail.html'>Appointment Detail</a>
+                          </li>          
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+        <i class="fas fa-user-md"></i>
+        <div id="patient-dropdown" class= "nav1" style="color: white"> 
+            <ul id="menu2">
+                <li>
+                     Patients
+                          <ul>
+                              <li>
+                                  <a class="nav1" href='appointmentSearch.html'>Patient Search</a>
+                              </li>
+                              <li>
+                                <a class="nav1" href='appointmentDetail.html'>Patient Detail</a>
+                              </li>          
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+        <i class="fas fa-notes-medical"></i>
+        <div id="reports-dropdown" class= "nav1" style="color: white"> 
+            <ul id="menu3">
+                <li>
+                     Reports
+        
+                      </li>
+                  </ul>
+              </div>
+        <i class="fas fa-hospital"></i>
+        <div id="nav-dropdown" class= "nav1" style="color: white"> 
+            <ul id="menu4">
+                <li>
+                     Patients
+                          <ul>
+                              <li>
+                                  <a class="nav1" href='appointmentSearch.html'>Doctor Search</a>
+                              </li>
+                        
+                              <li>
+                                <a class="nav1" href='appointmentDetail.html'>Doctor Detail</a>
+                              </li>      
+                           
+                              <li>
+                                <a class="nav1" href='appointmentSearch.html'>Add Specialty</a>
+                            </li>
+                           
+                            <li>
+                              <a class="nav1" href='appointmentDetail.html'>Add Medication</a>
+                            </li>              
+                          
+                        </ul>
+                      </li>
+                  </ul>
+              </div>
+       
+     </nav> 
+
+
+    <div class="main-container">
+        <div class="sidebar">
+          <ul id="treeView">
+            <li>My Appointments
+                <ul>
+                    <li><a href="appointmentSearch.html">Appointment Search</a> </li>
+                    <li><a href="appointmentDetail.html">Appointment Detail</a> </li> 
+                       
+                
+                   
+                </ul>
+            </li>
+          
+        </ul> 
+        
+     
+        </div>
+        <div id="main">
+            <nav class="crumbs">
+                <ul>
+                    <li class="crumb"><a href="index.html">Appointments</a></li>
+                </ul>
+            </nav>
+            
+          
+            <div id="dialog">
+                Content of the Dialog
+            </div>
+   
+            <div id="testGrid"></div> 
+        
+ 
+       </div>
+    </div>
+  
+    <script>
+        $(document).ready(function() {
+            $("#menu").kendoMenu();
+        });
+        $(document).ready(function() {
+            $("#menu2").kendoMenu();
+        });
+        $(document).ready(function() {
+            $("#menu3").kendoMenu();
+        });
+        $(document).ready(function() {
+            $("#menu4").kendoMenu();
+        });
+    </script>
+
+    
+</body>
+</html>

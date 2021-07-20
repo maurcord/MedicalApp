@@ -101,7 +101,7 @@ $(document).ready(function(){
         ]
     }).data("kendoDialog");;
 
-$("a, .k-button a ").click(function(){
+$(".k-button a ").click(function(){
     var dialog = $("#dialog").data("kendoDialog");
     dialog.open();
    
