@@ -38,45 +38,27 @@
     <header class="header">
         <h1>Welcome to Medical</h1>
     </header>
-
-    <div id="example">
-        <!-- <nav class="nav">
-        <div id="megaStore" class= "nav1" style="color: white">
-          
-          <ul id="menu">
-                <li>
-                    My Appointments
-                    <ul>
-                       
-                        <li>
-                           
-                            <a class="nav1" href='appointmentSearch.html'>Appointment Search</a>
-                            
-                        </li>
-                        <li>
-                            Appointment Detail
-                        
-                        </li>
-                      
-                    </ul>
-                </li>
-              
-             
-            </ul>
-        </div>
-</nav> -->
-
-
-
-
      <nav class="nav">
-        <i class="fas fa-clinic-medical"></i>
-        <a class="nav1" href='index.html'>Home</a>
-        <i class="fas fa-user-md"></i>
+      
+        <div id="appointment-dropdown" class= "nav1" style="color: white"> 
+            <ul id="home-menu">
+                <li  style="color:white">
+                       <i class="fas fa-user-md"></i>Home
+                          <ul>
+                              <li>
+                                  <a class="nav1" href='appointmentSearch.html'>Appointment Search</a>
+                              </li>
+                              <li>
+                                <a class="nav1" href='appointmentDetail.html'>Appointment Detail</a>
+                              </li>          
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
       <div id="appointment-dropdown" class= "nav1" style="color: white"> 
         <ul id="menu">
-            <li>
-                 My Appointments
+            <li  style="color:white">
+                   <i class="fas fa-user-md"></i>My Appointments
                       <ul>
                           <li>
                               <a class="nav1" href='appointmentSearch.html'>Appointment Search</a>
@@ -88,11 +70,11 @@
                   </li>
               </ul>
           </div>
-        <i class="fas fa-user-md"></i>
+   
         <div id="patient-dropdown" class= "nav1" style="color: white"> 
             <ul id="menu2">
-                <li>
-                     Patients
+                <li  style="color:white">
+                        <i class="fas fa-user-md"></i>  Patients
                           <ul>
                               <li>
                                   <a class="nav1" href='appointmentSearch.html'>Patient Search</a>
@@ -104,20 +86,20 @@
                       </li>
                   </ul>
               </div>
-        <i class="fas fa-notes-medical"></i>
+      
         <div id="reports-dropdown" class= "nav1" style="color: white"> 
             <ul id="menu3">
-                <li>
-                     Reports
+                <li  style="color:white">
+                    <i class="fas fa-notes-medical"></i>   Reports
         
                       </li>
                   </ul>
               </div>
-        <i class="fas fa-hospital"></i>
-        <div id="nav-dropdown" class= "nav1" style="color: white"> 
+    
+        <div id="admin-dropdown" class= "nav1" style="color: white"> 
             <ul id="menu4">
-                <li>
-                     Patients
+                <li style="color:white">
+                        <i class="fas fa-hospital"></i> Administration
                           <ul>
                               <li>
                                   <a class="nav1" href='appointmentSearch.html'>Doctor Search</a>
@@ -179,7 +161,10 @@
     </div>
   
     <script>
-        $(document).ready(function() {
+          $(document).ready(function() {
+            $("#home-menu").kendoMenu();
+        });
+       $(document).ready(function() {
             $("#menu").kendoMenu();
         });
         $(document).ready(function() {

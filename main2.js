@@ -26,3 +26,22 @@ $(window).on("load",function() {
       });
     }).scroll(); //invoke scroll-handler on page-load
   });
+
+     $(document).ready(function() {
+            $("#home-menu").kendoMenu();
+        });
+       $(document).ready(function() {
+            $("#menu").kendoMenu();
+        });
+        $(document).ready(function() {
+            $("#menu2").kendoMenu();
+        });
+        $(document).ready(function() {
+            $("#menu3").kendoMenu();
+        });
+        $(document).ready(function() {
+            $("#menu4").kendoMenu();
+        });
+        $(document).ready(function() {
+          $("#menu5").kendoMenu();
+      });
