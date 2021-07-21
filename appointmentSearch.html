@@ -6,6 +6,7 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
     <script src="./main.js"></script>
+    <script src="./main2.js"></script>
     <link rel="shortcut icon" href="./MedicalLogo.png" type="image/x-icon">
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -23,6 +24,7 @@
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.rtl.min.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.default.min.css">
 <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.mobile.all.min.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.default-v2.min.css" />
 <link rel="stylesheet" href="/css/normalize.css">
  <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.1.330/styles/kendo.bootstrap-v4.min.css" /> -->
  <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -35,18 +37,91 @@
         <h1>Welcome to Medical</h1>
     </header>
     <nav class="nav">
-        <i class="fas fa-clinic-medical"></i>
-        <a class="nav1" href='index.html'>Home</a>
-        <i class="fas fa-user-md"></i>
-        <a class="nav1" href='appointments.html'>Appointments</a>
-        <i class="fas fa-user-md"></i>
-        <a class="nav1" href='patients.html'>Patients</a> 
-        <i class="fas fa-notes-medical"></i>
-        <a class="nav1" href="reports.html">Reports</a>
-        <i class="fas fa-hospital"></i>
-        <a class="nav1" href="administration.html">Administration</a>
-
-        <!-- <a id="login" class="nav1">Log In</a> -->
+    
+        <div id="appointment-dropdown" class= "nav1" style="color: white"> 
+            <ul id="home-menu" onclick="location.href= 'index.html' ">
+                <li  style="color:white" >
+                       <i class="fas fa-user-md"></i>Home
+                      </li>
+                  </ul>
+              </div>
+      <div id="appointment-dropdown" class= "nav1" style="color: white"> 
+        <ul id="menu"  onclick="location.href= 'appointments.html'">
+            <li  style="color:white">
+                   <i class="fas fa-user-md"></i>My Appointments
+                      <ul>
+                       
+                        
+                        
+                        <li>
+                              <a class="nav1" href='appointmentSearch.html'>Appointment Search</a>
+                          </li>
+                          <li>
+                            <a class="nav1" href='appointmentDetail.html'>Appointment Detail</a>
+                          </li>          
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+    
+        <div id="patient-dropdown" class= "nav1" style="color: white"> 
+            <ul id="menu2">
+                <li  style="color:white">
+                        <i class="fas fa-user-md"></i>  Patients
+                          <ul>
+                              <li>
+                                  <a class="nav1" href='patients.html'>Patient Search</a>
+                              </li>
+                              <li>
+                                <a class="nav1" href='patientDetail.html'>Patient Detail</a>
+                              </li>          
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+      
+        <div id="reports-dropdown" class= "nav1" style="color: white"> 
+            <ul id="menu3">
+                <li  style="color:white">
+                    <i class="fas fa-notes-medical"></i>   Reports
+        
+                      </li>
+                  </ul>
+              </div>
+    
+        <div id="admin-dropdown" class= "nav1" style="color: white"> 
+            <ul id="menu4">
+                <li style="color:white">
+                        <i class="fas fa-hospital"></i> Administration
+                          <ul>
+                              <li>
+                                  <a class="nav1" href='doctorSearch.html'>Doctor Search</a>
+                              </li>
+                        
+                              <li>
+                                <a class="nav1" href='doctorDetail.html'>Doctor Detail</a>
+                              </li>      
+                           
+                              <li>
+                                <a class="nav1" href='addSpecialties.html'>Add Specialty</a>
+                            </li>
+                           
+                            <li>
+                              <a class="nav1" href='addMedication.html'>Add Medication</a>
+                            </li>              
+                          
+                        </ul>
+                      </li>
+                  </ul>
+              </div>
+    
+              <div id="admin-dropdown" class= "nav1" style="color: white"> 
+                <ul id="menu5">
+                    <li style="color:white; height: 50px; display: flex; align-items: center;">
+                      <i class="fas fa-sign-in-alt"></i>   <a id="login" class="login-button, nav1"  onclick="document.getElementById('id01').style.display='block'">Log In</a>
+                          </li>
+                      </ul>
+                  </div>
     </nav>
     <div class="main-container">
         <div class="sidebar">
