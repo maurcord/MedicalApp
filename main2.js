@@ -13,7 +13,7 @@ $(document).ready(function() {
 $(window).on("load",function() {
     $(window).scroll(function() {
       var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-      $(".main2").each(function() {
+      $(".main3").each(function() {
         /* Check the location of each desired element */
         var objectBottom = $(this).offset().top + $(this).outerHeight();
         

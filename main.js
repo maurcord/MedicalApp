@@ -118,12 +118,13 @@ var medication =
                         doctor: { type: "string", validation:{required: true} },
                         time: { type: "string", validation:{required: true} },
                         date: { type: "string", validation:{required: true} },
-                        identification: { type: "string", validation:{required: true} }
+                        id: { type: "string", validation:{required: true} }
                     }
                 }
             },
             pageSize: 10
         },
+        height: 800,
         scrollable: true,
         sortable: true,
         filterable: true,
@@ -137,7 +138,7 @@ var medication =
             { field: "doctor", title: "Doctor", format: "{0:c}", width: "130px"},
             { field: "time", title: "Time", width: "130px" },
             { field: "date", title: "Date", width: "130px" },
-            { field: "identification", title: "ID", width: "130px"}, 
+            { field: "id", title: "ID", width: "130px"}, 
             { command: ["edit", "destroy"], title: "&nbsp;", width: "150px" }
         ],
         editable: "inline"
@@ -169,7 +170,7 @@ var medication =
             // },
         columns: [
        
-        { template: "<a class='k-button gridButton'>Appointment Detail</a>", width: 160},            
+        { template: "<a class='k-button gridButton'>Appointment Detail</a>", width: 180},            
         { title: "ID", field: "id"},
         { title: "Date", field:"date" },
         { title: "Time", field:"time" },
@@ -181,7 +182,7 @@ var medication =
         data: people,
         pageSize: 10
     },
-    height: 600,
+    height: 800,
     scrollable: true,
     pageable: true,
     filterable: {
@@ -493,7 +494,7 @@ $("#grid2").kendoGrid({
                 scale: 0.8
             },
     columns: [
-    {  template: "<a class='k-button' href='https://demos.telerik.com/kendo-ui/grid'>Select</a>", width: 100},    
+        { template: "<a class='k-button gridButton2'>Patient Detail</a>", width: 180},  
     { title: "ID", field: "id" },
     { title: "First Name", field:"firstName" },
     { title: "Last Name", field:"lastName" },
@@ -508,7 +509,7 @@ dataSource: {
     data: people2,
     pageSize: 10
 },
-
+height: 800,
 scrollable: true,
 editable: true,
 pageable: true,
@@ -697,7 +698,7 @@ dataSource: {
     data: people4,
     pageSize: 10
 },
-height: 500,
+height: 800,
 editable: true,
 scrollable: true,
 pageable: true,
@@ -711,7 +712,7 @@ groupable: true
 }); 
 
 $("#grid7").kendoGrid({
-    toolbar: ["excel","pdf", {name: "create"}, {name: "save"}, {name:" cancel"}],
+    toolbar: ["excel","pdf", {name: "create"}, {name: "save"}, {name:"cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -740,24 +741,24 @@ $("#grid7").kendoGrid({
     { title: "Edited On", field: "editedOn" }
      ],
 
-dataSource: {
-    data: people4,
-    pageSize: 10
-},
-height: 500,
-editable: true,
-filterable: {
-    mode: "row"},
-scrollable: true,
-pageable: true,
-sortable: {
-    mode: "multiple"
-},
-groupable: true
-}); 
-
+     dataSource: {
+        data: people4,
+        pageSize: 10
+    },
+    height: 800,
+    editable: true,
+    scrollable: true,
+    pageable: true,
+    filterable: {
+        mode: "row"
+    },
+    sortable: {
+        mode: "multiple"
+    },
+    groupable: true
+    }); 
 $("#grid8").kendoGrid({
-    toolbar: ["excel","pdf",  {name: "create"}, {name: "save"}, {name:" cancel"}],
+    toolbar: ["excel","pdf",  {name: "create"}, {name: "save"}, {name:"cancel"}],
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
                 proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
@@ -786,26 +787,25 @@ $("#grid8").kendoGrid({
     { title: "Edited On", field: "editedOn" }
      ],
 
-dataSource: {
-    data: people4,
-    pageSize: 10
-},
-height: 500,
-editable: true,
-filterable:
-{
-    mode:"row"
-},
-scrollable: true,
-pageable: true,
-sortable: {
-    mode: "multiple"
-},
-groupable: true
-}); 
+     dataSource: {
+        data: people4,
+        pageSize: 10
+    },
+    height: 600,
+    editable: true,
+    scrollable: true,
+    pageable: true,
+    filterable: {
+        mode: "row"
+    },
+    sortable: {
+        mode: "multiple"
+    },
+    groupable: true
+    }); 
 
 $("#grid9").kendoGrid({
-    toolbar: ["excel","pdf", {name: "create"}, {name: "save"}, {name:" cancel"}],
+    toolbar: ["excel","pdf", {name: "create"}, {name: "save"}, {name:"cancel"}],
 
 
             excel: {
@@ -854,7 +854,7 @@ groupable: true
 }); 
 
 $("#grid10").kendoGrid({
-    toolbar: ["excel","pdf",{name: "create"}, {name: "save"}, {name:" cancel"}],
+    toolbar: ["excel","pdf",{name: "create"}, {name: "save"}, {name:"cancel"}],
           
             excel: {
                 fileName: "Kendo UI Grid Export.xlsx",
@@ -993,4 +993,41 @@ $(document).ready(function() {
     
     });
 
+    $(document).ready(function(){  
+        $("#dialog2").kendoDialog({
+            width: "600px",
+            height: "600px",
+            title: "Patient Detail",
+            visible: false,
+            closable: true,
+            modal: true,
+            content: "<p>Active Patient?: Yes <p>" +
+             "<p>Date of Birth: 07/10/1986 </p>" +
+              "<p> First Name: John </p>" +
+              "<p>Middle Name: Jacob </p>" +
+               "<p>Last Name: Doe </p>" + 
+               "<p>Street Address: 999 Cherry Lane </p>" + 
+               "<p>Apartment: 34 </p>" + 
+               "<p>City: Silver Spring </p>" +
+               "<p>State: MD </p>" +
+               "<p>Zip Code: 20901 </p>" + 
+               "<p>Social Security Number: 222-22-2222 </p>" +
+               "<p>Primary Insurance: Kaiser Permanente</p>" +
+               "<p>Primary Insurance Number: M987654321 </p>" +
+               "<p>Secondary Insurance: N/A </p>" +
+               "<p>Secondary Insurance Number: N/A </p>"
+
+             ,
+            actions: [
+            
+                { text: 'OK', primary: true }
+            ]
+        }).data("kendoDialog");;
     
+    $(" .gridButton2 ").click(function(){
+        var dialog = $("#dialog2").data("kendoDialog");
+        dialog.open();
+       
+    });
+    
+    });

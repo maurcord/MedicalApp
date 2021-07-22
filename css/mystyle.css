@@ -111,16 +111,17 @@ body {
    
 }
 .main2 {
-    height: 800px;
+    height: 1000px;
     display: flex;
-    text-align: center;
-    margin: auto 0;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
-.welcome-intro{
+/* .welcome-intro{
     margin-top: 300px;
     padding: 20px;
-}
+} */
 /* .medical-intro {
     border: 2px red solid;
 } */
